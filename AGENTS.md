@@ -282,6 +282,12 @@ continuous documentation rule above.
 
 - Use the AI Agents on AWS plugin and `awsknowledge` as the primary source for
   AWS technical knowledge.
+- Begin using `awsknowledge` in Phase 2 while the scope is being authored, not
+  only in the deeper research phase. Validate AWS terminology, service roles,
+  and technical boundaries before accepting them into `SCOPE.md`.
+- Phase 2 may define the teaching boundary, but it must not introduce an AWS
+  technical claim from model memory alone. Record the supporting AWS source or
+  defer the claim explicitly to Phase 3 for verification.
 - Prefer official AWS documentation over blogs. Use official AWS blogs when
   they provide necessary architecture explanations or current feature context.
 - Search before asserting current product capabilities, supported vector stores,
@@ -355,6 +361,9 @@ Required:
 - `OPERATION.md` initialized.
 - `SCOPE.md` completed and consistent with `AGENDA.md` and this file.
 - Duration, audience, inclusions, exclusions, and deck boundaries recorded.
+- AWS-specific terminology and service boundaries in `SCOPE.md` preliminarily
+  validated through the AI Agents on AWS plugin and `awsknowledge`; source
+  evidence or explicit Phase 3 verification deferrals recorded.
 
 ### Gate B — Knowledge verified
 
