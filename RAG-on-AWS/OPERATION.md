@@ -20,12 +20,12 @@ must read, in order:
 
 | Field | Value |
 |---|---|
-| Current phase | Phase 2 — Extract and lock the RAG scope from the agenda |
+| Current phase | Phase 3 — Research and verify RAG knowledge with AWS sources |
 | Phase status | `Pending` |
-| Current task | Phase 1 completed; Phase 2 is ready to start |
-| Last updated | 2026-07-16 21:26 +07:00 |
+| Current task | Phase 2 completed; Phase 3 is ready to start |
+| Last updated | 2026-07-16 21:30 +07:00 |
 | Blocking issue | None |
-| Exact next action | Start Phase 2 and create `RAG-on-AWS/SCOPE.md` from `AGENTS.md` and `AGENDA.md`; use the AI Agents on AWS plugin and `awsknowledge` during authoring to validate AWS terminology, service roles, and technical boundaries; record source evidence or explicit Phase 3 verification deferrals; update this file in the same unit of work. |
+| Exact next action | Start Phase 3; use AI Agents on AWS and `awsknowledge` to build `RAG-on-AWS/KNOWLEDGE.md` with beginner-safe explanations, current AWS terminology, source-to-claim mapping, limitations, and explicit wording constraints derived from the locked `SCOPE.md`. |
 
 ## 3. Confirmed Scope
 
@@ -98,7 +98,7 @@ and validation evidence are current.
 | # | Phase | Required output/evidence | Status |
 |---:|---|---|---|
 | 1 | Initialize operation truth and confirm workspace inputs | `OPERATION.md`; input existence and baseline fingerprints | `Completed` |
-| 2 | Extract and lock the RAG scope from the agenda | `SCOPE.md`; scope-to-agenda validation | `Pending` |
+| 2 | Extract and lock the RAG scope from the agenda | `SCOPE.md`; scope-to-agenda validation | `Completed` |
 | 3 | Research and verify RAG knowledge with AWS sources | `KNOWLEDGE.md`; source-to-claim mapping | `Pending` |
 | 4 | Design the beginner-focused 20-minute narrative | Narrative and timing plan recorded in domain artifacts | `Pending` |
 | 5 | Write and review the Vietnamese script in both formats | `SCRIPT.md`; timing and transition review | `Pending` |
@@ -118,6 +118,16 @@ and validation evidence are current.
 | Confirm immutable template exists | File metadata and baseline fingerprint recorded | `Completed` |
 | Create canonical operation-truth structure | This file created | `Completed` |
 | Validate zero-context handoff completeness | Roadmap, confirmed decisions, canonical inputs, baseline fingerprints, artifact registry, operation log, QA state, and exact next action verified | `Completed` |
+
+## 6A. Phase 2 Task-Level Progress
+
+| Task | Evidence | Status |
+|---|---|---|
+| Re-read agenda and durable project rules | `AGENDA.md`, `AGENTS.md`, and Phase 2 handoff reviewed at phase start | `Completed` |
+| Retrieve official AWS evidence for scope terminology and service boundaries | Official Bedrock, chunking, vector-store, OpenSearch Serverless, and Aurora PostgreSQL documentation registered | `Completed` |
+| Draft `RAG-on-AWS/SCOPE.md` | Scope artifact created with all required sections and preliminary AWS source mapping | `Completed` |
+| Validate scope against agenda, project rules, and AWS evidence | Gate A passed: all required boundaries, outcomes, transitions, terminology, and source links verified | `Completed` |
+| Close Phase 2 and prepare Phase 3 handoff | Updated roadmap, artifacts, QA, and exact next action | `Completed` |
 
 ## 7. Decision Log
 
@@ -160,7 +170,11 @@ and validation evidence are current.
 |---|---|---|
 | AI Agents on AWS plugin / `awsknowledge` | Primary verification and research channel from Phase 2 onward | Available; mandatory for Phase 2 scope validation and Phase 3 research |
 | [How Amazon Bedrock knowledge bases work](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-how-it-works.html) | Official baseline for RAG, preprocessing, chunks, embeddings, vector indexes, retrieval, and response augmentation | Retrieved through `awsknowledge`; preliminary Phase 2 source |
-| Official AWS documentation URLs | RAG, Knowledge Bases for Amazon Bedrock, embeddings, vector stores, OpenSearch Serverless, Aurora PostgreSQL | `Pending` |
+| [How content chunking works for knowledge bases](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-chunking.html) | Documents are split into manageable chunks; chunks are converted to embeddings and written to a vector index | Retrieved through `awsknowledge`; accepted for Phase 2 terminology |
+| [Knowledge bases for Amazon Bedrock — vector databases](https://docs.aws.amazon.com/prescriptive-guidance/latest/retrieval-augmented-generation-options/rag-fully-managed-bedrock.html) | Vector-store role; Amazon OpenSearch Serverless and Amazon Aurora PostgreSQL-Compatible Edition are supported agenda-relevant choices | Retrieved through `awsknowledge`; accepted for Phase 2 service boundary |
+| [Prerequisites for using a vector store you created for a knowledge base](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup.html) | Amazon OpenSearch Serverless vector search collections and indexes can store Bedrock-generated embeddings | Retrieved through `awsknowledge`; accepted for Phase 2 service role |
+| [Using Aurora PostgreSQL as a Knowledge Base for Amazon Bedrock](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.VectorDB.html) | Aurora PostgreSQL can store chunks/vectors and serve as a vector-store backend for Bedrock Knowledge Bases | Retrieved through `awsknowledge`; accepted for Phase 2 service role |
+| Official AWS documentation URLs | RAG, Knowledge Bases for Amazon Bedrock, embeddings, vector stores, OpenSearch Serverless, Aurora PostgreSQL | Phase 2 baseline complete; full Phase 3 claim coverage `Pending` |
 
 No technical AWS claim is considered verified until it is recorded with an
 official source in `KNOWLEDGE.md`.
@@ -173,7 +187,7 @@ official source in `KNOWLEDGE.md`.
 | `AGENDA.md` | Event scope source | Existing / canonical | Read and fingerprint verified 2026-07-16 |
 | `Slide/Template.pptx` | Immutable source deck | Existing / canonical | Existence, size, and baseline fingerprint verified 2026-07-16 |
 | `RAG-on-AWS/OPERATION.md` | Source of operation truth | Created / canonical | Zero-context handoff structure validated 2026-07-16 |
-| `RAG-on-AWS/SCOPE.md` | Locked scope and learning outcomes | Not created | `Pending` |
+| `RAG-on-AWS/SCOPE.md` | Locked scope and learning outcomes | Completed / canonical | Gate A passed 2026-07-16; Git blob fingerprint `e4c16c9b682406a7c5d6216f48990700e9c3d583` |
 | `RAG-on-AWS/KNOWLEDGE.md` | Verified AWS knowledge and citations | Not created | `Pending` |
 | `RAG-on-AWS/SCRIPT.md` | Full Vietnamese talk track and speaker notes | Not created | `Pending` |
 | `RAG-on-AWS/SLIDE-CONTENT.md` | English slide authoring contract | Not created | `Pending` |
@@ -204,6 +218,11 @@ official source in `KNOWLEDGE.md`.
 | 2026-07-16 21:22 | 1 | Rechecked template fingerprint and aligned handoff | Template fingerprint remains `53fa4c005acc8eb1c840a818dc6749eb5c6ceeec`; handoff now starts directly at Phase 2 | `OPERATION.md` | Await authorization to start Phase 2 |
 | 2026-07-16 | Pre-Phase 2 | Strengthened AWS source requirement | User requires AWS Agents and `awsknowledge` during content authoring; durable rule and exact next action updated | `AGENTS.md`, `OPERATION.md` | Use `awsknowledge` while creating `SCOPE.md` |
 | 2026-07-16 21:26 | Pre-Phase 2 | Verified `awsknowledge` access with an official Bedrock query | Retrieved the official AWS user-guide page describing RAG preprocessing and runtime retrieval; source registered without starting scope authoring | `OPERATION.md` | Use this and additional official AWS evidence during Phase 2 |
+| 2026-07-16 21:27 | 2 | Started Phase 2 | Re-read agenda and durable rules; set Phase 2 as the only `In Progress` roadmap phase | `OPERATION.md` | Retrieve official AWS evidence for scope boundaries |
+| 2026-07-16 21:28 | 2 | Retrieved Phase 2 AWS evidence through `awsknowledge` | Official sources confirm the preprocessing/runtime flow, chunking and embeddings terminology, vector-store role, OpenSearch Serverless, and Aurora PostgreSQL support | `OPERATION.md` | Draft `SCOPE.md` from confirmed evidence |
+| 2026-07-16 21:30 | 2 | Created `RAG-on-AWS/SCOPE.md` | Scope now records agenda placement, audience, timing, learning outcomes, in/out boundaries, use case, transitions, terminology, preliminary AWS evidence, and acceptance criteria | `SCOPE.md`, `OPERATION.md` | Run Gate A validation |
+| 2026-07-16 21:30 | 2 | Ran Gate A scope validation | All 16 scope sections, required decisions, five official AWS source links, agenda boundaries, and terminology constraints verified; template fingerprint unchanged | `SCOPE.md`, `OPERATION.md` | Close Phase 2 |
+| 2026-07-16 21:30 | 2 | Closed Phase 2 | `SCOPE.md` accepted as canonical with fingerprint `e4c16c9b682406a7c5d6216f48990700e9c3d583`; Phase 3 prepared | `SCOPE.md`, `OPERATION.md` | Build `KNOWLEDGE.md` with AWS evidence |
 
 ## 13. QA and Unresolved Issues
 
@@ -216,10 +235,16 @@ official source in `KNOWLEDGE.md`.
 - Every required roadmap phase has an explicit status.
 - Zero-context handoff information is complete and internally consistent.
 - Phase 1 completion evidence is recorded.
+- Gate A passed: `SCOPE.md` is consistent with `AGENTS.md`, `AGENDA.md`, and
+  preliminary official AWS evidence.
+- Scope covers the 20-minute limit, newcomer audience, typo handling, Kahoot
+  exclusion, teaching use case, transitions, service-choice boundary, and
+  Phase 3 verification deferrals.
+- `Slide/Template.pptx` fingerprint remains unchanged after Phase 2.
 
 ### Pending checks
 
-- Phase 2 scope consistency check against `AGENTS.md` and `AGENDA.md`.
+- Phase 3 source-to-claim completeness and technical wording review.
 
 ### Unresolved issues
 
@@ -227,22 +252,20 @@ official source in `KNOWLEDGE.md`.
 
 ## 14. Handoff Instructions
 
-Phase 1 is complete. To continue with Phase 2:
+Phases 1 and 2 are complete. To continue with Phase 3:
 
 1. Read `AGENTS.md` and this file.
-2. Read `AGENDA.md` directly.
-3. Set Roadmap Phase 2 and the Current Execution State to `In Progress` before
-   starting scope extraction.
-4. Use the AI Agents on AWS plugin and `awsknowledge` to validate AWS
-   terminology, service roles, and technical boundaries used by the scope.
-5. Create `RAG-on-AWS/SCOPE.md` with agenda placement, audience, duration,
-   learning outcomes, inclusions, exclusions, narrative objective, central
-   takeaway, transitions to adjacent team sections, and preliminary AWS source
-   evidence or explicit Phase 3 verification deferrals.
-6. Validate `SCOPE.md` against `AGENTS.md`, `AGENDA.md`, and the retrieved AWS
-   evidence.
-7. Update the artifact registry, roadmap, operation log, QA state, and exact
-   next action in this file before starting Phase 3.
+2. Read the canonical `RAG-on-AWS/SCOPE.md`.
+3. Set Roadmap Phase 3 and the Current Execution State to `In Progress` before
+   starting knowledge research.
+4. Use AI Agents on AWS and `awsknowledge` as the primary source. Prefer
+   official AWS user guides and service documentation.
+5. Create `RAG-on-AWS/KNOWLEDGE.md` with beginner-safe explanations,
+   source-to-claim mapping, terminology, limitations, and wording constraints.
+6. Resolve every Phase 3 verification deferral identified in `SCOPE.md`.
+7. Validate `KNOWLEDGE.md` against `SCOPE.md` and official AWS evidence.
+8. Update the artifact registry, roadmap, operation log, QA state, and exact
+   next action before starting Phase 4.
 
 Do not begin AWS research, script writing, slide-content authoring, or
 PowerPoint editing until its preceding gate is complete.
