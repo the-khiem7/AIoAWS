@@ -20,12 +20,12 @@ must read, in order:
 
 | Field | Value |
 |---|---|
-| Current phase | Phase 8 — Duplicate template slides and author the RAG PowerPoint |
-| Phase status | `Pending` |
-| Current task | Phase 7 completed; Phase 8 is ready to start |
-| Last updated | 2026-07-16 22:26 +07:00 |
+| Current phase | Phase 9 — Render, inspect, and validate every slide |
+| Phase status | `Pending` — ready to start |
+| Current task | Phase 8 is closed; the authored deck is ready for formal per-slide visual QA |
+| Last updated | 2026-07-16 23:18 +07:00 |
 | Blocking issue | None |
-| Exact next action | Start Phase 8 from the prepared scratch `template-starter.pptx`; use artifact-tool to edit only the inherited targets in the validated frame map, create/resolve the six planned replacement visuals, and export a distinct `Slide/RAG-on-AWS.pptx` without modifying the source template. |
+| Exact next action | Start Phase 9, inspect all 11 renders from the final exported deck at full size, record per-slide findings, and apply any visual corrections through artifact-tool before rerendering. |
 
 ## 3. Confirmed Scope
 
@@ -104,7 +104,7 @@ and validation evidence are current.
 | 5 | Write and review the Vietnamese script in both formats | `SCRIPT.md`; timing and transition review | `Completed` |
 | 6 | Produce and review the English slide-content specification | `SLIDE-CONTENT.md`; copy and source coverage review | `Completed` |
 | 7 | Audit the complete template and map every output slide | Template audit; validated output-to-source slide map | `Completed` |
-| 8 | Duplicate template slides and author the RAG PowerPoint | `Slide/RAG-on-AWS.pptx`; original template unchanged | `Pending` |
+| 8 | Duplicate template slides and author the RAG PowerPoint | `Slide/RAG-on-AWS.pptx`; original template unchanged | `Completed` |
 | 9 | Render, inspect, and validate every slide | Per-slide visual QA evidence | `Pending` |
 | 10 | Run final content, source, timing, fidelity, and merge QA | Final QA ledger and resolved findings | `Pending` |
 | 11 | Complete handoff and mark delivered artifacts | Final artifact registry and team handoff | `Pending` |
@@ -186,6 +186,18 @@ and validation evidence are current.
 | Update `SLIDE-CONTENT.md` with accepted source/object plan | All 11 slide contracts now record validated source slides, exact inherited target IDs/actions, template-fit exact copy, and a consolidated map | `Completed` |
 | Run Gate E validation and close Phase 7 | Gate E passed: validator zero issues, 11 mapped starter slides, 105 inherited targets, zero add actions, complete canonical mapping, unchanged template fingerprint, and Phase 8 handoff | `Completed` |
 
+## 6G. Phase 8 Task-Level Progress
+
+| Task | Evidence | Status |
+|---|---|---|
+| Re-read Presentations, content, template-following, and artifact-tool rules | Required skill, content rules, template workflow, quick start, API docs, imported-deck cookbook, and shape/image/rich-text references reviewed | `Completed` |
+| Initialize artifact-tool workspace and inspect starter | Workspace initialized; imported starter has 11 slides; mutation IDs captured through `presentation.inspect()`; `shape.delete()` and `image.replace(...)` verified through runtime help | `Completed` |
+| Resolve six replacement visuals/assets | Six authored conceptual SVGs created for knowledge gap, external knowledge, event document, meaning map, Bedrock Knowledge Bases workflow, and quality chain; no screenshots, fake UI, or unofficial AWS marks | `Completed` |
+| Author slides 1–11 from exact copy and frame map | All exact English copy inserted through inherited text targets; planned deletions and slide-9 repositioning completed; six inherited images replaced | `Completed` |
+| Export distinct `Slide/RAG-on-AWS.pptx` | Artifact-tool export succeeded at the required output path | `Completed` |
+| Run Phase 8 structural/content smoke checks | Passed after remediation: 11-slide export, 11 required titles, zero stale sample phrases, six distinct embedded visuals, 11 successful renders, unchanged template fingerprint, and final deck fingerprint recorded | `Completed` |
+| Close Phase 8 and prepare Phase 9 visual QA | Artifact registry, authoring deviation, logs, QA evidence, and exact Phase 9 action updated | `Completed` |
+
 ## 7. Decision Log
 
 | Date | Decision | Rationale | Affected artifacts |
@@ -261,9 +273,9 @@ official source in `KNOWLEDGE.md`.
 | `RAG-on-AWS/SCOPE.md` | Locked scope and learning outcomes | Completed / canonical | Gate A passed 2026-07-16; Git blob fingerprint `e4c16c9b682406a7c5d6216f48990700e9c3d583` |
 | `RAG-on-AWS/KNOWLEDGE.md` | Verified AWS knowledge and citations | Completed / canonical | Gate B passed 2026-07-16; 18 approved claims, 15 source records, fingerprint `e410aafeb0af8c8989ede23665d64cfa829ecc00` |
 | `RAG-on-AWS/SCRIPT.md` | Narrative blueprint, full Vietnamese talk tracks, and speaker notes | Completed / canonical | Gate C passed 2026-07-16; 11 full tracks, 11 note sets, all metadata, approximately 1,948 words; fingerprint `d95441f64eabe59b5f46ce875c6da2c7026398d6` |
-| `RAG-on-AWS/SLIDE-CONTENT.md` | English slide authoring contract and validated source/object map | Completed / canonical | Gates D–E passed 2026-07-16; 11 exact-copy blocks, 11 validated source slides, 105 inherited targets, template-fit revisions, complete approved claim coverage; fingerprint `ac9febd5def18955cdf894392ede99b9ccffb39b` |
+| `RAG-on-AWS/SLIDE-CONTENT.md` | English slide authoring contract and validated source/object map | Completed / canonical | Gates D–E passed; Phase 8 shared-media replacement note added; fingerprint `6bb67381eb809496ecb036af609b2eb3d53d2bfa` |
 | Phase 7 external scratch evidence | Template inspection, audit, frame map, deviation/source notes, starter deck, layouts, renders, and QA | Completed / retained | `C:\Users\THEKHI~1\AppData\Local\Temp\codex-presentations\manual-20260716-cloudmastery\rag-template-audit\tmp`; frame-map validator passed; starter fingerprint `eb7d329e7c3bcd66d7bd35fec365ac4f7d4227d7` |
-| `Slide/RAG-on-AWS.pptx` | Merge-ready RAG slide module | Not created | `Pending` |
+| `Slide/RAG-on-AWS.pptx` | Authored RAG slide module; merge readiness pending Phases 9–10 | Created / Phase 8 complete | 11 slides, 3,672,838 bytes, Git blob fingerprint `ae6aaa4a91835b7b41d65e177cf1e154f27c07e4`; Phase 8 render/content smoke check passed |
 
 ## 11. Template Audit Summary
 
@@ -337,6 +349,16 @@ official source in `KNOWLEDGE.md`.
 | 2026-07-16 22:25 | 7 | Ran Gate E template-map validation | Verified 11 output slides, 105 inherited targets, zero add actions, nine omitted sources, exact starter/source order, 11 exact-copy blocks, 11 validated-source contracts, zero stale provisional markers, and no final deck created prematurely; validator passed with zero issues | `SLIDE-CONTENT.md`, `OPERATION.md` | Recheck template fingerprint and close Phase 7 |
 | 2026-07-16 22:26 | 7 | Rechecked source-template immutability and accepted canonical fingerprints | Template remains `53fa4c005acc8eb1c840a818dc6749eb5c6ceeec`; canonical `SLIDE-CONTENT.md` is `ac9febd5def18955cdf894392ede99b9ccffb39b`; starter is `eb7d329e7c3bcd66d7bd35fec365ac4f7d4227d7` | `OPERATION.md` | Close Phase 7 |
 | 2026-07-16 22:26 | 7 | Closed Phase 7 and Gate E | Complete audit/map/starter evidence exists, `SLIDE-CONTENT.md` is current, template is unchanged, and Phase 8 may author from the duplicated-source starter | `SLIDE-CONTENT.md`, `OPERATION.md` | Author `Slide/RAG-on-AWS.pptx` in Phase 8 |
+| 2026-07-16 22:30 | 8 | Started Phase 8 using Presentations artifact-tool workflow | Phase 8 is the only roadmap phase `In Progress`; authoring will use the prepared starter and validated inherited targets only | `OPERATION.md` | Initialize artifact-tool and lock asset/edit APIs |
+| 2026-07-16 22:34 | 8 | Initialized the retained artifact-tool authoring workspace | Bundled `@oai/artifact-tool` dependencies resolved successfully in the retained scratch directory; required Presentations and API references are fully reviewed | `OPERATION.md` | Inspect starter IDs, deletion semantics, and replacement assets |
+| 2026-07-16 22:43 | 8 | Inspected the imported starter and verified mutation APIs | `presentation.inspect()` confirmed 11 slides and all inherited text/shape/image frames; imported mutation IDs differ from layout-export IDs, so authoring will use inspect IDs; runtime help confirmed `shape.delete()` and `image.replace(...)` | `OPERATION.md` | Build six conceptual SVG replacement assets |
+| 2026-07-16 22:49 | 8 | Created six traceable conceptual replacement visuals | Authored local SVG diagrams for slides 2, 3, 4, 6, 8, and 10 using the template palette; visuals are conceptual, contain no fake UI, and will replace only inherited image frames | `OPERATION.md` | Author the 11-slide deck and export the distinct output PPTX |
+| 2026-07-16 22:56 | 8 | Authored and exported the 11-slide RAG module | Artifact-tool applied all inherited text/image/delete/reposition operations without error and exported `Slide/RAG-on-AWS.pptx`; post-edit inspect found the intended RAG/Bedrock/vector/context copy and replacement-image alt text | `Slide/RAG-on-AWS.pptx`, `OPERATION.md` | Run Phase 8 structural/content smoke checks |
+| 2026-07-16 23:01 | 8 | Rendered the first authored deck and found blank replacement visuals | All 11 slides rendered, but six SVG-backed inherited image frames appeared white; text, template structure, and slide order remained intact. The output is not accepted until the assets are rasterized and re-embedded | `Slide/RAG-on-AWS.pptx`, `OPERATION.md` | Convert SVG assets to PNG, re-export, and rerender |
+| 2026-07-16 23:09 | 8 | Rasterized and byte-embedded the six visuals; found shared-media coupling | PNG embedding resolved blank frames, but the montage showed that duplicated template slides can reference the same underlying media asset, so later replacements overwrote earlier visuals. Authoring will isolate each media instance through delete–add at the exact inherited frame; this is a technical replacement workaround, not a new layout object | `Slide/RAG-on-AWS.pptx`, `OPERATION.md` | Isolate six media instances and rerender |
+| 2026-07-16 23:12 | 8 | Isolated all six replacement-media instances | Each inherited media reference was replaced by one unique byte-backed PNG at the exact inherited frame; slide-specific visuals no longer overwrite one another, and no new layout/card/panel structure was introduced | `Slide/RAG-on-AWS.pptx`, `SLIDE-CONTENT.md`, `OPERATION.md` | Correct smoke-render fit findings and rerender |
+| 2026-07-16 23:16 | 8 | Corrected smoke-render fit findings and rerendered | Adjusted inherited title/tag/label text sizes, restored inherited Slide 11 card/conclusion fills, and verified the final 11-slide render set; all six visuals are distinct and major overlap/wrapping findings are resolved | `Slide/RAG-on-AWS.pptx`, `OPERATION.md` | Run final Phase 8 structural/content/fingerprint checks |
+| 2026-07-16 23:18 | 8 | Passed Phase 8 smoke checks and closed the phase | Verified 11 required titles, zero stale sample phrases, 11 rendered PNGs, 3,672,838-byte output, final deck fingerprint `ae6aaa4a91835b7b41d65e177cf1e154f27c07e4`, unchanged template fingerprint `53fa4c005acc8eb1c840a818dc6749eb5c6ceeec`, and removal of the temporary inspect sidecar | `Slide/RAG-on-AWS.pptx`, `SLIDE-CONTENT.md`, `OPERATION.md` | Start formal Phase 9 per-slide visual QA |
 
 ## 13. QA and Unresolved Issues
 
@@ -398,11 +420,24 @@ official source in `KNOWLEDGE.md`.
   provisional mapping markers.
 - The source template fingerprint remains
   `53fa4c005acc8eb1c840a818dc6749eb5c6ceeec` after Phase 7.
+- Phase 8 exported an 11-slide `Slide/RAG-on-AWS.pptx` using artifact-tool and
+  the validated duplicated-source starter.
+- The final Phase 8 smoke render contains 11 PNGs; all six conceptual visuals
+  are embedded as distinct byte-backed assets at the intended inherited
+  frames.
+- Structural/content checks found all 11 required titles and zero stale source
+  phrases from the template sample content.
+- The final authored deck is 3,672,838 bytes with Git blob fingerprint
+  `ae6aaa4a91835b7b41d65e177cf1e154f27c07e4`.
+- The immutable template still matches Git blob fingerprint
+  `53fa4c005acc8eb1c840a818dc6749eb5c6ceeec` after Phase 8.
+- The temporary output inspect sidecar was removed; canonical evidence is
+  summarized in this file and retained render evidence remains in scratch.
 
 ### Pending checks
 
-- Phase 8 artifact-tool authoring, exact-copy insertion, image replacement,
-  inherited-object deletion/repositioning, and distinct PPTX export.
+- Phase 9 formal full-size per-slide visual inspection and correction loop.
+- Phase 10 final content, source, timing, fidelity, and merge-readiness QA.
 
 ### Unresolved issues
 
@@ -410,26 +445,22 @@ official source in `KNOWLEDGE.md`.
 
 ## 14. Handoff Instructions
 
-Phases 1–7 and Gates A–E are complete. To continue with Phase 8:
+Phases 1–8 and Gates A–E are complete. To continue with Phase 9:
 
 1. Read `AGENTS.md` and this file.
 2. Read canonical `SLIDE-CONTENT.md` and the matching sections in `SCRIPT.md`.
-3. Reuse the retained Phase 7 scratch workspace and prepared
-   `template-starter.pptx`; do not duplicate from the source template again
-   unless the accepted map changes.
-4. Set Roadmap Phase 8 and Current Execution State to `In Progress` before
-   authoring.
-5. Read the Presentations artifact-tool API references and initialize the
-   artifact-tool workspace under the existing scratch `tmp` directory.
-6. Resolve the six planned replacement visuals listed in `source-notes.txt`;
-   use official AWS identity/assets where service identity matters and do not
-   create fake interfaces or screenshots.
-7. Import `template-starter.pptx` with artifact-tool and edit only the inherited
-   targets in `template-frame-map.json` according to canonical exact copy.
-8. Export a distinct `Slide/RAG-on-AWS.pptx`; never write to
+3. Set Roadmap Phase 9 and Current Execution State to `In Progress`.
+4. Use `Slide/RAG-on-AWS.pptx` as the input; never write to
    `Slide/Template.pptx`.
-9. Update `OPERATION.md` immediately after each visual, authoring, export, or
-   validation milestone before continuing to Phase 9.
+5. Reuse the retained scratch root and the final Phase 8 render set at
+   `...\tmp\phase8-final-accepted` as baseline evidence.
+6. Inspect all 11 slides individually at full size for clipping, title wrapping,
+   overlap, text hierarchy, image crop, placeholder residue, and template
+   fidelity; record one QA result per slide.
+7. Apply any corrections only through artifact-tool, rerender affected slides,
+   and update this file immediately after each correction/validation unit.
+8. Do not mark Phase 9 complete until every slide has an explicit pass and the
+   final export fingerprint/render set are recorded.
 
 Do not begin AWS research, script writing, slide-content authoring, or
 PowerPoint editing until its preceding gate is complete.

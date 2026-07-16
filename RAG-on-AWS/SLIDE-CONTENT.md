@@ -674,6 +674,16 @@ Validation evidence:
 - Font family, size, weight, spacing, master, background, footer, logo, and
   brand chrome remain inherited from the mapped source slide.
 
+Phase 8 implementation note:
+
+- The duplicated slides shared underlying media references, so a direct image
+  replacement on one slide could overwrite another slide's visual.
+- For the six planned media replacements, artifact-tool therefore deleted the
+  inherited media reference and added one unique byte-backed PNG at the exact
+  inherited frame, size, and narrative role. This is a net media replacement,
+  not a new layout object; no card, panel, table, chart, master, background, or
+  parallel theme structure was added.
+
 ## 8. Phase 6 Acceptance Criteria
 
 Phase 6 is complete when:
