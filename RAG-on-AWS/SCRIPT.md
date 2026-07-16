@@ -2,9 +2,9 @@
 
 ## Document Status
 
-- Phase 4 status: narrative blueprint and timing plan.
-- Phase 5 status: full Vietnamese talk tracks and concise speaker notes are not
-  yet authored.
+- Phase 4 status: narrative blueprint and timing plan completed.
+- Phase 5 status: full Vietnamese talk tracks and concise speaker notes completed;
+  Gate C script QA passed.
 - Audience-visible English slide copy is not defined here; that belongs in
   `SLIDE-CONTENT.md` during Phase 6.
 - All technical claims must use approved claim IDs from `KNOWLEDGE.md`.
@@ -417,3 +417,625 @@ Phase 4 is complete when:
 - Benefits and limitations are balanced.
 - No final slide copy or PowerPoint authoring has started prematurely.
 - `OPERATION.md` records validation, artifact state, and the Phase 5 next action.
+
+## 12. Phase 5 Delivery Script
+
+The wording below is the Vietnamese delivery layer for the 11 narrative beats.
+The full talk track may be rehearsed almost verbatim. The speaker notes are the
+short-form live reference.
+
+### Slide 1 — Section divider
+
+- Planned duration: **0:20**.
+- Speaking objective: mark the RAG section and create immediate continuity from
+  the preceding Amazon Bedrock content.
+- Approved claims: none; navigation only.
+
+#### Transition in
+
+> Tiếp theo, chúng ta sẽ đi vào một cách rất phổ biến để đưa dữ liệu riêng vào
+> trải nghiệm generative AI.
+
+#### Full talk track
+
+> Phần tiếp theo của chúng ta là **RAG with Amazon Bedrock**. Trong khoảng 20
+> phút, chúng ta sẽ trả lời ba câu hỏi: vì sao cần RAG, RAG thực sự hoạt động như
+> thế nào, và Amazon Bedrock giúp chúng ta ở những bước nào.
+
+#### Speaker notes
+
+- RAG with Amazon Bedrock.
+- Ba câu hỏi: why, how, AWS mapping.
+- Vào thẳng vấn đề, không giới thiệu lại sự kiện.
+
+#### Transition out
+
+> Trước hết, hãy bắt đầu từ một nghịch lý: model rất mạnh nhưng vẫn có thể không
+> trả lời được câu hỏi của chúng ta.
+
+#### Terminology note
+
+- Đọc “RAG” nhất quán như từ tiếng Anh /ræg/; không cần đánh vần từng ký tự.
+
+### Slide 2 — The model can be powerful and still miss the answer
+
+- Planned duration: **1:30**.
+- Speaking objective: establish the private/recent-information gap without
+  making the foundation model sound weak.
+- Approved claims: C01.
+
+#### Transition in
+
+> Model rất mạnh, vậy tại sao chúng ta vẫn cần thêm một hệ thống như RAG?
+
+#### Full talk track
+
+> Chúng ta vừa nói về foundation models và khả năng tạo nội dung rất mạnh của
+> chúng. Nhưng một model mạnh không có nghĩa là model biết mọi thứ.
+>
+> Hãy lấy chính sự kiện Cloud Mastery làm ví dụ. Model có thể giải thích cloud là
+> gì, AI là gì, thậm chí Amazon Bedrock là gì. Nhưng liệu model có tự biết agenda
+> nội bộ mới nhất của sự kiện hôm nay không? Liệu nó có biết phần RAG của chúng ta
+> kéo dài bao nhiêu phút, hoặc team vừa cập nhật tài liệu nào vào sáng nay không?
+>
+> Thông thường, câu trả lời là không. Những dữ liệu đó có thể là dữ liệu riêng,
+> dữ liệu rất đặc thù cho tổ chức, hoặc được tạo ra sau thời điểm model được huấn
+> luyện.
+>
+> Vì vậy, đây không hẳn là vấn đề model kém. Vấn đề là model đang thiếu đúng
+> context cần thiết cho câu hỏi hiện tại. Và đó chính là khoảng trống mà RAG được
+> thiết kế để giải quyết.
+
+#### Speaker notes
+
+- Model mạnh ≠ biết mọi dữ liệu.
+- Ví dụ: agenda Cloud Mastery mới nhất.
+- Private, domain-specific, recent information.
+- Vấn đề chính: thiếu context, không nhất thiết do model yếu.
+- Claim C01.
+
+#### Transition out
+
+> Vậy làm thế nào để cung cấp đúng thông tin cho model mà không phải huấn luyện
+> lại model từ đầu?
+
+#### Terminology note
+
+- Dùng “foundation model” trên lần nhắc đầu; có thể nói ngắn là “model” ở các câu
+  sau.
+- “Context” được hiểu là thông tin tham chiếu cho yêu cầu hiện tại, không phải bộ
+  nhớ vĩnh viễn.
+
+### Slide 3 — Retrieve first, generate second
+
+- Planned duration: **1:40**.
+- Speaking objective: give the central RAG definition and correct the retraining
+  misconception.
+- Approved claims: C02, C03, C04.
+
+#### Transition in
+
+> Câu trả lời của RAG rất đơn giản về mặt ý tưởng: retrieve trước, generate sau.
+
+#### Full talk track
+
+> RAG là viết tắt của **Retrieval-Augmented Generation**. Tên nghe khá kỹ thuật,
+> nhưng chúng ta có thể hiểu bằng hai hành động.
+>
+> Hành động thứ nhất là **retrieve**: tìm phần thông tin bên ngoài có liên quan
+> đến câu hỏi. Hành động thứ hai là **generate**: đưa phần thông tin vừa tìm được
+> vào context, rồi foundation model mới tạo câu trả lời.
+>
+> Điểm rất quan trọng ở đây là RAG không huấn luyện lại foundation model. Dữ liệu
+> nguồn vẫn nằm bên ngoài model. Với mỗi yêu cầu, hệ thống chỉ lấy phần phù hợp và
+> đưa phần đó cho model sử dụng tại thời điểm trả lời.
+>
+> Chúng ta cũng cần tách ba khái niệm. Thứ nhất là **source data**—tài liệu gốc.
+> Thứ hai là **retrieved context**—đoạn thông tin được chọn từ tài liệu. Thứ ba là
+> **generated response**—câu trả lời bằng ngôn ngữ tự nhiên do model tạo ra.
+>
+> Nếu chỉ nhớ một câu trong phần này, hãy nhớ: **retrieve first, generate
+> second**.
+
+#### Speaker notes
+
+- RAG = Retrieval-Augmented Generation.
+- Retrieve: tìm thông tin liên quan.
+- Generate: model tạo câu trả lời từ question + context.
+- Không retrain model.
+- Source data ≠ retrieved context ≠ generated response.
+- Câu nhớ: retrieve first, generate second.
+- Claims C02–C04.
+
+#### Transition out
+
+> Bây giờ, hãy biến định nghĩa này thành một tình huống rất gần với sự kiện hôm
+> nay.
+
+#### Terminology note
+
+- “Retrieval” là truy xuất; “generation” là sinh câu trả lời.
+- Tránh nói “RAG học tài liệu” vì dễ khiến người nghe hiểu thành training.
+
+### Slide 4 — Cloud Mastery Knowledge Assistant
+
+- Planned duration: **1:30**.
+- Speaking objective: make the RAG definition concrete with one consistent
+  event-related scenario.
+- Approved claims: C01, C02, C04.
+
+#### Transition in
+
+> Giả sử chúng ta có một trợ lý hỏi đáp dành riêng cho Cloud Mastery.
+
+#### Full talk track
+
+> Hãy tưởng tượng một người tham dự mở Cloud Mastery Knowledge Assistant và hỏi:
+> “Phần RAG kéo dài bao lâu?”
+>
+> Foundation model có thể hiểu câu hỏi, nhưng nó không tự biết agenda nội bộ mới
+> nhất. Vì vậy, hệ thống sẽ tìm trong bộ tài liệu Cloud Mastery, lấy đúng đoạn có
+> thông tin “RAG with Bedrock—20 minutes”, rồi đưa đoạn đó vào context.
+>
+> Sau đó model mới tạo câu trả lời: “Phần RAG kéo dài 20 phút.”
+>
+> Trong ví dụ này, agenda là source data. Dòng chứa thời lượng là retrieved
+> context. Còn câu trả lời cuối cùng là generated response.
+>
+> Ví dụ này chỉ dùng để giải thích. Chúng ta không giả định trợ lý đã được xây
+> dựng hoặc đã đạt một mức accuracy nào. Điều cần quan sát là model không phải
+> ghi nhớ agenda; model chỉ cần được cung cấp đúng context khi người dùng đặt câu
+> hỏi.
+
+#### Speaker notes
+
+- Question: “Phần RAG kéo dài bao lâu?”
+- Agenda = source data.
+- Dòng “20 minutes” = retrieved context.
+- Câu trả lời = generated response.
+- Teaching example, không phải demo/kết quả thật.
+- Claims C01, C02, C04.
+
+#### Transition out
+
+> Nhưng trước khi hệ thống có thể tìm đúng đoạn agenda, chúng ta phải biến bộ tài
+> liệu thành một nguồn có thể truy xuất được.
+
+#### Terminology note
+
+- Không dùng từ “database” cho toàn bộ source data; source có thể là tài liệu hoặc
+  hệ thống khác.
+
+### Slide 5 — Prepare the knowledge before asking questions
+
+- Planned duration: **1:55**.
+- Speaking objective: explain the preparation/ingestion flow and separate it
+  from runtime retrieval.
+- Approved claims: C05, C06, C07, C18.
+
+#### Transition in
+
+> Bước đầu tiên không xảy ra khi người dùng đặt câu hỏi. Nó xảy ra trước đó, khi
+> chúng ta chuẩn bị knowledge source.
+
+#### Full talk track
+
+> Hãy nhìn vào luồng chuẩn bị dữ liệu. Đầu tiên, chúng ta có source documents—ví
+> dụ agenda, tài liệu workshop hoặc FAQ của sự kiện.
+>
+> Tiếp theo, hệ thống chia tài liệu thành những phần nhỏ hơn gọi là **chunks**.
+> Tại sao không dùng nguyên cả tài liệu? Vì một tài liệu dài thường chứa rất nhiều
+> chủ đề, trong khi câu hỏi chỉ cần một vài đoạn liên quan. Chunks giúp retrieval
+> làm việc ở mức cụ thể hơn.
+>
+> Sau đó, mỗi chunk được chuyển thành một **embedding**, tức là một dạng biểu diễn
+> bằng các con số. Các embeddings này được ghi vào một **vector store** hoặc
+> vector index, đồng thời vẫn giữ liên kết về tài liệu gốc.
+>
+> Như vậy, luồng chuẩn bị có thể nhớ bằng bốn bước: documents, chunks,
+> embeddings, vector store.
+>
+> Có thêm một lưu ý về dữ liệu mới. Nếu agenda thay đổi, source data và index
+> cũng cần được đồng bộ hoặc cập nhật. RAG không tự động bảo đảm rằng mọi câu trả
+> lời luôn dùng dữ liệu mới nhất nếu pipeline chưa đưa thay đổi đó vào index.
+>
+> Đây là preparation flow. Nó khác với runtime flow—luồng xảy ra khi người dùng
+> thật sự đặt câu hỏi—mà chúng ta sẽ xem ngay sau đây.
+
+#### Speaker notes
+
+- Preparation xảy ra trước câu hỏi.
+- Documents → chunks → embeddings → vector store.
+- Chunk = đoạn nhỏ, retrieval cụ thể hơn.
+- Giữ mapping về source document.
+- Dữ liệu thay đổi cần sync/update index.
+- Tách preparation và runtime.
+- Claims C05–C07, C18.
+
+#### Transition out
+
+> Hai thuật ngữ mới nhất ở đây là embedding và vector store. Chúng ta sẽ dừng lại
+> một chút để hiểu trực giác của chúng.
+
+#### Terminology note
+
+- “Ingestion” có thể giải thích là quá trình đưa và chuẩn bị dữ liệu cho hệ
+  thống.
+- Không đi vào token size hoặc chunking strategy nâng cao.
+
+### Slide 6 — A map of meaning
+
+- Planned duration: **2:05**.
+- Speaking objective: build a beginner-safe intuition for embeddings, semantic
+  similarity, and vector stores.
+- Approved claims: C06, C07, C08.
+
+#### Transition in
+
+> Làm thế nào máy tính biết một câu hỏi và một đoạn tài liệu có ý nghĩa gần nhau,
+> dù chúng không dùng chính xác cùng từ ngữ?
+
+#### Full talk track
+
+> Một **embedding** là cách biểu diễn nội dung thành một dãy số để hệ thống có thể
+> so sánh về mặt toán học. Chúng ta không cần học công thức trong phần này. Hãy
+> dùng một hình dung đơn giản: embedding giống như tọa độ trên một “bản đồ ý
+> nghĩa”.
+>
+> Trên bản đồ đó, các nội dung có ý nghĩa liên quan thường nằm gần nhau hơn. Ví
+> dụ, câu hỏi “Phần RAG kéo dài bao lâu?” và đoạn agenda “RAG with Bedrock—20
+> minutes” không có toàn bộ từ giống nhau, nhưng chúng nói về cùng một chủ đề.
+>
+> **Vector store** là nơi lưu và lập chỉ mục các embeddings để chúng ta có thể
+> tìm những điểm gần với embedding của câu hỏi. Khi người dùng hỏi, câu hỏi cũng
+> được biểu diễn để so sánh. Hệ thống tìm các chunks có mức độ tương đồng cao và
+> trả chúng về làm candidate context.
+>
+> Có hai điều cần tránh hiểu nhầm. Embedding không phải là bản tóm tắt mà con
+> người có thể đọc. Và vector store không viết câu trả lời. Nó chỉ giúp tìm nội
+> dung có ý nghĩa liên quan. Foundation model vẫn là thành phần tạo ra câu trả
+> lời cuối cùng.
+>
+> “Bản đồ ý nghĩa” chỉ là phép so sánh để chúng ta dễ hình dung. Trong hệ thống
+> thực tế, embeddings là các vectors số và việc tìm kiếm dựa trên phép đo tương
+> đồng.
+
+#### Speaker notes
+
+- Embedding = numerical representation.
+- Analogy: tọa độ trên “map of meaning”.
+- Meaning gần nhau → vectors có thể gần nhau.
+- Vector store lưu/index embeddings, tìm similar chunks.
+- Không phải summary; không generate câu trả lời.
+- Analogy, không phải UI thật.
+- Claims C06–C08.
+
+#### Transition out
+
+> Khi đã có vector store, chúng ta có thể chạy toàn bộ câu hỏi của người tham dự
+> qua runtime flow.
+
+#### Terminology note
+
+- Đọc “embedding” gần như “em-be-đing”; “vector” là “véc-tơ”.
+- Giải thích “semantic similarity” là gần nhau về ý nghĩa.
+
+### Slide 7 — From question to grounded response
+
+- Planned duration: **2:10**.
+- Speaking objective: explain the complete runtime retrieve-and-generate flow.
+- Approved claims: C08, C09, C11, C12.
+
+#### Transition in
+
+> Bây giờ người dùng thật sự đặt câu hỏi. Hãy theo dõi từng bước.
+
+#### Full talk track
+
+> Bước một, người tham dự hỏi: “Phần RAG kéo dài bao lâu?”
+>
+> Bước hai, hệ thống biểu diễn câu hỏi theo cách có thể so sánh với các embeddings
+> đã lưu.
+>
+> Bước ba, vector store tìm các chunks có ý nghĩa gần với câu hỏi. Trong trường
+> hợp này, một kết quả phù hợp là dòng agenda chứa “RAG with Bedrock—20 minutes”.
+>
+> Bước bốn, hệ thống đưa chunk vừa truy xuất vào context cùng với câu hỏi ban
+> đầu. Đây chính là phần **augmentation** trong RAG.
+>
+> Bước năm, foundation model đọc question và context, rồi tạo câu trả lời bằng
+> ngôn ngữ tự nhiên.
+>
+> Trong những Bedrock retrieval-and-generation flows được hỗ trợ, response cũng
+> có thể đi kèm source attribution—thông tin cho biết context đến từ source chunk
+> nào. Điều đó giúp tăng tính minh bạch, nhưng chúng ta không nên xem citation là
+> bằng chứng rằng mọi từ trong câu trả lời đều chắc chắn đúng.
+>
+> Hãy để ý retrieval và generation là hai hành động khác nhau. Một managed
+> operation có thể kết hợp chúng cho thuận tiện, nhưng về mặt tư duy, chúng ta
+> vẫn cần biết đâu là đoạn được tìm thấy và đâu là nội dung do model tạo ra.
+>
+> Toàn bộ runtime flow có thể rút gọn thành: question, retrieve context,
+> augment, generate.
+
+#### Speaker notes
+
+- Question → query representation.
+- Vector store retrieves relevant chunks.
+- Add chunks to context = augmentation.
+- Foundation model generates response.
+- Supported flows may include source attribution.
+- Citation ≠ guarantee.
+- Retrieval và generation tách biệt về concept.
+- Claims C08, C09, C11, C12.
+
+#### Transition out
+
+> Nếu tự xây toàn bộ luồng này, chúng ta phải kết nối rất nhiều thành phần. Đây
+> là lúc Amazon Bedrock Knowledge Bases xuất hiện.
+
+#### Terminology note
+
+- “Grounded response” nên giải thích là câu trả lời dựa trên context được cung
+  cấp, không dịch thành “câu trả lời chắc chắn đúng”.
+
+### Slide 8 — Amazon Bedrock Knowledge Bases manages key RAG steps
+
+- Planned duration: **1:55**.
+- Speaking objective: map the established generic RAG flow to Amazon Bedrock
+  Knowledge Bases without overclaiming full automation.
+- Approved claims: C10, C11, C12.
+
+#### Transition in
+
+> Chúng ta đã hiểu RAG ở mức generic. Bây giờ mới map các bước đó sang AWS.
+
+#### Full talk track
+
+> **Amazon Bedrock Knowledge Bases** giúp triển khai và quản lý nhiều bước quan
+> trọng trong RAG workflow.
+>
+> Ở phía chuẩn bị dữ liệu, knowledge base có thể hỗ trợ lấy nội dung từ data
+> source, parsing, chunking, tạo embeddings và đưa embeddings vào vector store
+> theo configuration đã chọn.
+>
+> Ở runtime, knowledge base hỗ trợ truy xuất source chunks liên quan. Hệ thống có
+> thể dùng kết quả retrieval trực tiếp, hoặc kết hợp retrieval với foundation
+> model để tạo natural-language response và source attribution trong những flow
+> được hỗ trợ.
+>
+> Giá trị chính ở đây là team không phải tự nối từng thành phần cơ bản từ con số
+> không. Tuy nhiên, câu nói an toàn là Bedrock Knowledge Bases **quản lý hoặc đơn
+> giản hóa các bước quan trọng**. Nó không làm biến mất mọi quyết định về dữ liệu,
+> chunking, retrieval quality hay evaluation.
+>
+> Với Cloud Mastery assistant, chúng ta có thể map source documents, embeddings,
+> vector store, retrieval và response về một managed AWS workflow rõ ràng hơn.
+> Nhưng mental model vẫn giống như trước: retrieve context trước, model generate
+> sau.
+
+#### Speaker notes
+
+- Map generic RAG → AWS sau khi audience đã hiểu flow.
+- Preparation: source, parse, chunk, embed, vector store.
+- Runtime: retrieve hoặc retrieve + generate.
+- Supported source attribution.
+- “Manage/simplify key steps,” không “mọi thứ tự động hoàn hảo”.
+- Claims C10–C12.
+
+#### Transition out
+
+> Trong workflow này, vector store là một vị trí kiến trúc. Agenda của chúng ta
+> liệt kê hai lựa chọn AWS cho vị trí đó.
+
+#### Terminology note
+
+- Trên slide giữ nguyên tên **Amazon Bedrock Knowledge Bases**.
+- Không đưa API names vào lời nói trừ khi khán giả hỏi thêm sau buổi trình bày.
+
+### Slide 9 — One vector-store role, multiple AWS choices
+
+- Planned duration: **1:25**.
+- Speaking objective: place OpenSearch Serverless and Aurora PostgreSQL in the
+  same conceptual architecture slot as alternatives.
+- Approved claims: C13, C14, C15.
+
+#### Transition in
+
+> OpenSearch và Aurora không phải hai bước phải chạy nối tiếp nhau.
+
+#### Full talk track
+
+> Trong kiến trúc đơn giản của chúng ta, knowledge base cần một vector store để
+> lưu và tìm kiếm embeddings.
+>
+> **Amazon OpenSearch Serverless** là một lựa chọn AWS-native cho vector search.
+> Nó có thể cung cấp vector index cho Amazon Bedrock Knowledge Bases.
+>
+> **Amazon Aurora PostgreSQL-Compatible Edition** là một lựa chọn khác. Với khả
+> năng vector của PostgreSQL, Aurora có thể đảm nhiệm vai trò vector store cho
+> knowledge base.
+>
+> Điều quan trọng trong 20 phút hôm nay không phải là chọn dịch vụ nào tốt hơn.
+> Điều quan trọng là hiểu cả hai đang đứng ở cùng một vị trí trong simplified
+> architecture: vị trí lưu và truy xuất vectors.
+>
+> Vì vậy, hãy đọc sơ đồ theo dạng “chọn một vector-store option phù hợp”, không
+> phải “OpenSearch xong rồi chuyển sang Aurora”. Các tiêu chí cost, performance,
+> operation và configuration nằm ngoài phạm vi phần này.
+
+#### Speaker notes
+
+- Một conceptual slot: vector store.
+- Option 1: Amazon OpenSearch Serverless.
+- Option 2: Amazon Aurora PostgreSQL-Compatible Edition.
+- Alternatives, không sequential.
+- Không compare/recommend.
+- Claims C13–C15.
+
+#### Transition out
+
+> Chúng ta đã có đầy đủ kiến trúc. Câu hỏi cuối cùng là: RAG giúp được gì, và nó
+> không bảo đảm điều gì?
+
+#### Terminology note
+
+- Dùng đầy đủ “Amazon Aurora PostgreSQL-Compatible Edition” lần đầu.
+- Có thể nói ngắn “Aurora PostgreSQL” ở câu sau.
+
+### Slide 10 — Better grounding is not a correctness guarantee
+
+- Planned duration: **1:45**.
+- Speaking objective: balance RAG benefits with realistic limitations and safe
+  hallucination wording.
+- Approved claims: C12, C16, C17, C18.
+
+#### Transition in
+
+> RAG cải thiện thông tin đầu vào cho model, nhưng không biến generative AI thành
+> một hệ thống luôn đúng.
+
+#### Full talk track
+
+> Lợi ích rõ nhất của RAG là model có thể sử dụng dữ liệu riêng hoặc dữ liệu được
+> cập nhật bên ngoài training data. Retrieval giúp đưa context liên quan vào
+> prompt, và source attribution trong những flow được hỗ trợ giúp chúng ta truy
+> vết context đến từ đâu.
+>
+> Nhưng chất lượng cuối cùng phụ thuộc vào nhiều mắt xích. Source data có đúng và
+> đủ mới không? Tài liệu được chia chunks có giữ đủ ý nghĩa không? Retrieval có
+> lấy đúng đoạn liên quan không? Và model có diễn đạt đúng dựa trên context đó
+> không?
+>
+> Vì vậy, cách nói chính xác là RAG **có thể giảm hallucination risk** bằng cách
+> grounding câu trả lời trong nguồn bên ngoài. Không nên nói RAG ngăn chặn hoặc
+> loại bỏ hallucinations. AWS cũng cung cấp cách đánh giá retrieval và generation
+> riêng biệt, vì hai phần này đều có thể ảnh hưởng đến kết quả.
+>
+> Quay lại Cloud Mastery assistant: nếu agenda trong source đã cũ, hệ thống có
+> thể truy xuất rất đúng nhưng vẫn trả lời bằng thông tin cũ. Nếu retrieval lấy
+> sai chunk, model sẽ nhận context không phù hợp. RAG tốt cần dữ liệu tốt,
+> retrieval tốt và evaluation phù hợp.
+
+#### Speaker notes
+
+- Benefits: private/updated context, grounding, traceability.
+- Quality chain: data → chunks → retrieval → generation.
+- Reduce hallucination risk, không eliminate/prevent.
+- Evaluate retrieval và generation.
+- Agenda cũ → answer vẫn có thể cũ.
+- Claims C12, C16–C18.
+
+#### Transition out
+
+> Với giới hạn đó trong đầu, chúng ta có thể kết thúc bằng ba ý ngắn gọn.
+
+#### Terminology note
+
+- “Hallucination” giải thích ngắn là nội dung model tạo ra nghe hợp lý nhưng sai
+  hoặc không có căn cứ.
+- Không dùng “accuracy 100%” hoặc bất kỳ số liệu không có nguồn nào.
+
+### Slide 11 — Three things to remember
+
+- Planned duration: **1:25**.
+- Speaking objective: resolve the opening problem, reinforce three durable
+  takeaways, and hand off to the next team section.
+- Approved claims: C02, C03, C10, C16.
+
+#### Transition in
+
+> Nếu chỉ mang theo ba điều sau phần này, hãy nhớ ba ý này.
+
+#### Full talk track
+
+> Thứ nhất, RAG giúp foundation model sử dụng external knowledge mà không cần
+> retrain model trên toàn bộ dữ liệu đó.
+>
+> Thứ hai, mental model cốt lõi là **retrieve first, generate second**. Hệ thống
+> tìm context liên quan trước, sau đó foundation model mới tạo câu trả lời.
+>
+> Thứ ba, Amazon Bedrock Knowledge Bases có thể quản lý hoặc đơn giản hóa nhiều
+> bước quan trọng trong workflow, nhưng data quality, retrieval quality và
+> evaluation vẫn rất quan trọng.
+>
+> Quay lại câu hỏi đầu tiên: model không cần ghi nhớ agenda Cloud Mastery. Model
+> cần được cung cấp đúng đoạn agenda, đúng thời điểm, để trả lời câu hỏi hiện tại.
+>
+> Đó là giá trị cốt lõi của RAG: đưa đúng context đến model trước khi model
+> generate. Và cũng cần nhớ rằng RAG giúp câu trả lời grounded hơn, chứ không bảo
+> đảm mọi câu trả lời luôn đúng.
+>
+> Phần RAG của chúng ta kết thúc tại đây. Mình xin chuyển sang phần tiếp theo của
+> chương trình.
+
+#### Speaker notes
+
+- 1: External knowledge, no retraining requirement.
+- 2: Retrieve first, generate second.
+- 3: Bedrock simplifies key steps; quality/evaluation still matter.
+- Close loop: model không memorize agenda, chỉ cần right context.
+- Grounded hơn ≠ guaranteed correct.
+- Handoff sang phần tiếp theo.
+
+#### Transition out
+
+> Mình xin chuyển sang phần tiếp theo của chương trình.
+
+#### Terminology note
+
+- Giữ nhịp chậm ở ba takeaways; đây là phần người nghe cần nhớ.
+- Không mời Q&A hoặc giới thiệu Kahoot thay cho người phụ trách tiếp theo.
+
+## 13. Rehearsal and Live-Delivery Guidance
+
+### Timing discipline
+
+- Planned scripted delivery remains **17:40**.
+- Maintain the **2:20** safety margin for pauses, slower explanation, and team
+  transition.
+- QA count: 11 full-talk-track sections contain approximately 1,948
+  whitespace-delimited words. At 120 words per minute, straight reading is about
+  16:14; the 17:40 plan intentionally allows roughly 1:26 for emphasis, pointing
+  to visuals, and slide transitions before the separate 2:20 safety margin.
+- If running long, shorten examples in Slides 4 and 6 first. Do not remove the
+  limitations in Slide 10 or the synthesis in Slide 11.
+- If running short, pause for emphasis and restate the runtime flow. Do not add
+  unverified implementation detail.
+
+### Audience checks
+
+Use rhetorical checks rather than stopping for a long interaction:
+
+- After Slide 3: “Retrieve trước, generate sau.”
+- After Slide 6: “Vector store tìm nội dung; model tạo câu trả lời.”
+- After Slide 7: “Question → retrieve context → augment → generate.”
+- After Slide 10: “Grounded hơn không có nghĩa là luôn đúng.”
+
+### Delivery style
+
+- Use a conversational pace and short pauses after each new term.
+- Point to the current process step rather than reading every label.
+- Repeat the phrase “retrieve first, generate second” no more than three times
+  across the full module.
+- Keep English AWS product names intact; explain their role in Vietnamese.
+- Do not improvise claims about price, scale, Region support, model lists,
+  security, or implementation.
+
+## 14. Phase 5 Acceptance Criteria
+
+Phase 5 is complete when:
+
+- All 11 slides contain a full Vietnamese talk track.
+- All 11 slides contain concise Vietnamese speaker notes.
+- Every slide includes objective, duration, transition in, transition out, and
+  terminology guidance.
+- Talk tracks follow the Phase 4 narrative order and approved claim IDs.
+- Language is understandable to a newcomer and sounds natural when spoken.
+- RAG is never described as retraining the foundation model.
+- OpenSearch Serverless and Aurora PostgreSQL remain alternatives.
+- Hallucination wording uses reduce/minimize risk, never prevent/eliminate.
+- No demo, Kahoot, code, implementation, pricing, or unsupported claim is added.
+- The planned duration remains 17:40 with a 2:20 safety margin.
+- Final audience-visible English slide copy remains deferred to Phase 6.
+- `OPERATION.md` records script QA, artifact state, and the Phase 6 next action.

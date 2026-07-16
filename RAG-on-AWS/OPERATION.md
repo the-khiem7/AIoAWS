@@ -20,12 +20,12 @@ must read, in order:
 
 | Field | Value |
 |---|---|
-| Current phase | Phase 5 — Write and review the Vietnamese script in both formats |
+| Current phase | Phase 6 — Produce and review the English slide-content specification |
 | Phase status | `Pending` |
-| Current task | Phase 4 completed; Phase 5 is ready to start |
-| Last updated | 2026-07-16 21:44 +07:00 |
+| Current task | Phase 5 completed; Phase 6 is ready to start |
+| Last updated | 2026-07-16 21:58 +07:00 |
 | Blocking issue | None |
-| Exact next action | Start Phase 5 and expand each of the 11 beats in `RAG-on-AWS/SCRIPT.md` into a natural Vietnamese full talk track plus concise Vietnamese speaker notes, with objective, duration, transitions, and terminology guidance; preserve the 17:40 target and approved claim boundaries. |
+| Exact next action | Start Phase 6 and create `RAG-on-AWS/SLIDE-CONTENT.md` with exact English audience-visible copy for the 11-slide hypothesis, narrative role, visual intent, script mapping, claim/source references, density constraints, and provisional template-layout needs; do not edit the PPTX yet. |
 
 ## 3. Confirmed Scope
 
@@ -101,7 +101,7 @@ and validation evidence are current.
 | 2 | Extract and lock the RAG scope from the agenda | `SCOPE.md`; scope-to-agenda validation | `Completed` |
 | 3 | Research and verify RAG knowledge with AWS sources | `KNOWLEDGE.md`; source-to-claim mapping | `Completed` |
 | 4 | Design the beginner-focused 20-minute narrative | Narrative and timing plan recorded in domain artifacts | `Completed` |
-| 5 | Write and review the Vietnamese script in both formats | `SCRIPT.md`; timing and transition review | `Pending` |
+| 5 | Write and review the Vietnamese script in both formats | `SCRIPT.md`; timing and transition review | `Completed` |
 | 6 | Produce and review the English slide-content specification | `SLIDE-CONTENT.md`; copy and source coverage review | `Pending` |
 | 7 | Audit the complete template and map every output slide | Template audit; validated output-to-source slide map | `Pending` |
 | 8 | Duplicate template slides and author the RAG PowerPoint | `Slide/RAG-on-AWS.pptx`; original template unchanged | `Pending` |
@@ -151,6 +151,17 @@ and validation evidence are current.
 | Map beats to approved claim IDs and use-case roles | All C01–C18 mapped; use-case role documented per beat | `Completed` |
 | Validate learning progression, density, transitions, and scope | Phase 4 QA passed: 11 beats/questions, 17:40 total, 2:20 margin, C01–C18 coverage, opening/closing resolution, and scope compliance verified | `Completed` |
 | Close Phase 4 and prepare Phase 5 handoff | Updated roadmap, artifacts, QA, and next action | `Completed` |
+
+## 6D. Phase 5 Task-Level Progress
+
+| Task | Evidence | Status |
+|---|---|---|
+| Re-read Presentations rules and Phase 4 blueprint | Skill rules and canonical artifacts reviewed; fingerprints unchanged | `Completed` |
+| Write full Vietnamese talk tracks for beats 1–11 | All 11 delivery-script sections contain natural Vietnamese prose | `Completed` |
+| Write concise Vietnamese speaker notes for beats 1–11 | All 11 delivery-script sections contain short live-reference bullets | `Completed` |
+| Add objectives, transitions, timing, and terminology notes | All 11 sections contain required metadata | `Completed` |
+| Validate naturalness, newcomer clarity, claim safety, and timing | Gate C passed: all required sections present, claim wording reviewed, approximately 1,948 words, 17:40 target, and 2:20 safety margin retained | `Completed` |
+| Close Phase 5 and prepare Phase 6 handoff | Updated roadmap, artifacts, QA, and next action | `Completed` |
 
 ## 7. Decision Log
 
@@ -221,7 +232,7 @@ official source in `KNOWLEDGE.md`.
 | `RAG-on-AWS/OPERATION.md` | Source of operation truth | Created / canonical | Zero-context handoff structure validated 2026-07-16 |
 | `RAG-on-AWS/SCOPE.md` | Locked scope and learning outcomes | Completed / canonical | Gate A passed 2026-07-16; Git blob fingerprint `e4c16c9b682406a7c5d6216f48990700e9c3d583` |
 | `RAG-on-AWS/KNOWLEDGE.md` | Verified AWS knowledge and citations | Completed / canonical | Gate B passed 2026-07-16; 18 approved claims, 15 source records, fingerprint `e410aafeb0af8c8989ede23665d64cfa829ecc00` |
-| `RAG-on-AWS/SCRIPT.md` | Narrative blueprint; later full Vietnamese talk track and speaker notes | Phase 4 completed / Phase 5 input | Narrative QA passed 2026-07-16; 11 beats, 17:40 target, all claims mapped; fingerprint `d9eaa19a2f3cc159e9da5a2d33cd47b7e5409ad7` |
+| `RAG-on-AWS/SCRIPT.md` | Narrative blueprint, full Vietnamese talk tracks, and speaker notes | Completed / canonical | Gate C passed 2026-07-16; 11 full tracks, 11 note sets, all metadata, approximately 1,948 words; fingerprint `d95441f64eabe59b5f46ce875c6da2c7026398d6` |
 | `RAG-on-AWS/SLIDE-CONTENT.md` | English slide authoring contract | Not created | `Pending` |
 | `Slide/RAG-on-AWS.pptx` | Merge-ready RAG slide module | Not created | `Pending` |
 
@@ -268,6 +279,11 @@ official source in `KNOWLEDGE.md`.
 | 2026-07-16 21:44 | 4 | Created Phase 4 narrative blueprint in `SCRIPT.md` | Added 11 cumulative beats, 17:40 timing plan, 2:20 safety margin, transitions, checkpoints, all 18 claim mappings, use-case discipline, density guidance, and Phase 5 contract | `SCRIPT.md`, `OPERATION.md` | Run Phase 4 narrative QA |
 | 2026-07-16 21:44 | 4 | Ran Phase 4 narrative QA | Verified 11 beats, 11 audience questions, 18 claim-coverage entries, 17:40 total, 2:20 buffer, opening/closing resolution, use-case discipline, scope compliance, and no premature slide/PPT authoring | `SCRIPT.md`, `OPERATION.md` | Close Phase 4 |
 | 2026-07-16 21:44 | 4 | Closed Phase 4 | Narrative blueprint accepted with fingerprint `d9eaa19a2f3cc159e9da5a2d33cd47b7e5409ad7`; Phase 5 prepared | `SCRIPT.md`, `OPERATION.md` | Write full Vietnamese talk tracks and speaker notes |
+| 2026-07-16 21:54 | 5 | Started Phase 5 using Presentations narrative rules | Phase 4 blueprint and canonical fingerprints verified; script authoring will preserve the 17:40 target and approved claims | `SCRIPT.md`, `OPERATION.md` | Write both Vietnamese script formats for all 11 beats |
+| 2026-07-16 21:56 | 5 | Drafted complete Phase 5 delivery script | Added full Vietnamese talk track, concise speaker notes, objective, duration, transitions, and terminology guidance for all 11 slides plus rehearsal guidance | `SCRIPT.md`, `OPERATION.md` | Run Gate C script QA |
+| 2026-07-16 | 5 | Measured talk-track length during Gate C | 11 sections contain approximately 1,948 words; straight reading is about 16:14 at 120 WPM, leaving planned emphasis/transition time within the 17:40 target and preserving the 2:20 safety margin | `SCRIPT.md`, `OPERATION.md` | Complete Gate C review |
+| 2026-07-16 21:58 | 5 | Ran Gate C script validation | Verified 11/11 full talk tracks, speaker notes, transition-in, transition-out, terminology, objectives, durations, and claim sets; reviewed newcomer clarity and prohibited wording | `SCRIPT.md`, `OPERATION.md` | Close Phase 5 |
+| 2026-07-16 21:58 | 5 | Closed Phase 5 | Script accepted as canonical with fingerprint `d95441f64eabe59b5f46ce875c6da2c7026398d6`; Phase 6 prepared | `SCRIPT.md`, `OPERATION.md` | Create exact English slide-content specification |
 
 ## 13. QA and Unresolved Issues
 
@@ -302,11 +318,18 @@ official source in `KNOWLEDGE.md`.
 - Generic RAG concepts precede AWS mapping; the use case remains supporting;
   OpenSearch/Aurora remain alternatives; final slide copy and PowerPoint work
   remain deferred.
+- Gate C passed: all 11 slides contain both Vietnamese formats plus objective,
+  timing, transitions, terminology, and approved claim references.
+- Script length is approximately 1,948 words; straight reading at 120 WPM is
+  about 16:14, leaving planned emphasis/transition time within 17:40 and the
+  separate 2:20 safety margin.
+- Script wording preserves no-retraining, alternative-vector-store,
+  supported-citation, synchronization, and reduce-not-eliminate boundaries.
 
 ### Pending checks
 
-- Phase 5 full-talk-track naturalness, speaker-note completeness, terminology,
-  transition quality, and rehearsal timing.
+- Phase 6 exact English copy, density, script alignment, visual intent, and
+  claim/source coverage.
 
 ### Unresolved issues
 
@@ -314,24 +337,24 @@ official source in `KNOWLEDGE.md`.
 
 ## 14. Handoff Instructions
 
-Phases 1–4 are complete. To continue with Phase 5:
+Phases 1–5 are complete. To continue with Phase 6:
 
 1. Read `AGENTS.md` and this file.
-2. Read canonical `SCOPE.md`, `KNOWLEDGE.md`, and the Phase 4 blueprint in
-   `SCRIPT.md`.
-3. Set Roadmap Phase 5 and the Current Execution State to `In Progress` before
-   script authoring.
-4. For each of the 11 beats, write both a natural Vietnamese full talk track and
-   concise Vietnamese speaker notes.
-5. Add objective, transition in, transition out, duration, and terminology or
-   pronunciation notes where useful.
-6. Use only approved claim IDs and required qualification rules.
-7. Rehearsal-check the script against the 17:40 target; retain the 2:20 margin
-   rather than expanding scope.
-8. Validate that the script is understandable to a newcomer and aligned with
-   the narrative sequence.
+2. Read canonical `SCOPE.md`, `KNOWLEDGE.md`, and `SCRIPT.md`.
+3. Set Roadmap Phase 6 and the Current Execution State to `In Progress` before
+   writing slide content.
+4. Create `SLIDE-CONTENT.md` with exact English audience-facing copy for each
+   slide, keeping the Vietnamese explanation in `SCRIPT.md`.
+5. Record narrative role, primary claim, visual intent, script link, claim IDs,
+   source references, and density constraints per slide.
+6. Treat 11 slides as a hypothesis that may be adjusted for legibility, but
+   preserve narrative order and timing.
+7. Record provisional template-layout needs without editing the PPTX or claiming
+   final source-slide mappings before the complete template audit.
+8. Validate exact copy, newcomer readability, script alignment, visual economy,
+   source coverage, and scope compliance.
 9. Update the artifact registry, roadmap, operation log, QA state, and exact
-   next action before starting Phase 6.
+   next action before starting Phase 7.
 
 Do not begin AWS research, script writing, slide-content authoring, or
 PowerPoint editing until its preceding gate is complete.
