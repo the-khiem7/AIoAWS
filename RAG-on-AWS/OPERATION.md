@@ -21,11 +21,11 @@ must read, in order:
 | Field | Value |
 |---|---|
 | Current phase | Phase 7 — Audit the complete template and map every output slide |
-| Phase status | `Pending` |
-| Current task | Phase 6 completed; Phase 7 is ready to start |
-| Last updated | 2026-07-16 22:06 +07:00 |
+| Phase status | `In Progress` |
+| Current task | Inspect all 16 template slides and capture source-slide/object evidence |
+| Last updated | 2026-07-16 22:09 +07:00 |
 | Blocking issue | None |
-| Exact next action | Start Phase 7 with the Presentations template-following workflow: inspect all 16 slides in `Slide/Template.pptx`, validate or replace every provisional candidate in `SLIDE-CONTENT.md`, identify inherited edit targets, and create the validated output-to-source frame map before authoring any slide. |
+| Exact next action | Run the Presentations template inspection script against immutable `Slide/Template.pptx` in external scratch space, then record the complete 16-slide inventory before selecting final source slides. |
 
 ## 3. Confirmed Scope
 
@@ -103,7 +103,7 @@ and validation evidence are current.
 | 4 | Design the beginner-focused 20-minute narrative | Narrative and timing plan recorded in domain artifacts | `Completed` |
 | 5 | Write and review the Vietnamese script in both formats | `SCRIPT.md`; timing and transition review | `Completed` |
 | 6 | Produce and review the English slide-content specification | `SLIDE-CONTENT.md`; copy and source coverage review | `Completed` |
-| 7 | Audit the complete template and map every output slide | Template audit; validated output-to-source slide map | `Pending` |
+| 7 | Audit the complete template and map every output slide | Template audit; validated output-to-source slide map | `In Progress` |
 | 8 | Duplicate template slides and author the RAG PowerPoint | `Slide/RAG-on-AWS.pptx`; original template unchanged | `Pending` |
 | 9 | Render, inspect, and validate every slide | Per-slide visual QA evidence | `Pending` |
 | 10 | Run final content, source, timing, fidelity, and merge QA | Final QA ledger and resolved findings | `Pending` |
@@ -173,6 +173,18 @@ and validation evidence are current.
 | Record visual intent, density constraints, and provisional template-layout needs | Every slide records visual intent, density budget, candidate source slide, and inherited-object intent; final mapping remains deferred to Phase 7 | `Completed` |
 | Run Gate D copy, density, alignment, source, and scope validation | Passed: 11/11 slides contain all required contracts; visible-copy density is 12–50 words; C01–C18 and S1–S15 references validate; no internal terms appear in visible-copy blocks; canonical fingerprints are unchanged | `Completed` |
 | Close Phase 6 and prepare Phase 7 handoff | Roadmap, artifact registry, QA, operation log, and exact next action updated | `Completed` |
+
+## 6F. Phase 7 Task-Level Progress
+
+| Task | Evidence | Status |
+|---|---|---|
+| Re-read Presentations and template-following rules | Skill, content rules, template contract, `OPERATION.md`, and `SLIDE-CONTENT.md` reviewed | `Completed` |
+| Inspect all 16 source slides and inherited objects | External scratch audit, renders, layout JSON, manifest, and media inventory | `In Progress` |
+| Record complete template audit and reusable layout inventory | `template-audit.txt` plus canonical summary | `Pending` |
+| Map 11 output slides to validated source slides | `template-frame-map.json` with inherited edit targets and omission reasons | `Pending` |
+| Validate frame map and prepare starter deck | Plan validation and duplicated-source starter evidence | `Pending` |
+| Update `SLIDE-CONTENT.md` with accepted source/object plan | Final source slide and edit-target mapping per output slide | `Pending` |
+| Run Gate E validation and close Phase 7 | Template fidelity prerequisites, immutability, mapping completeness, and handoff evidence | `Pending` |
 
 ## 7. Decision Log
 
@@ -301,6 +313,7 @@ official source in `KNOWLEDGE.md`.
 | 2026-07-16 22:06 | 6 | Ran Gate D slide-specification validation | Verified 11 slide headings, exact-copy blocks, visual intents, density budgets, script mappings, and provisional template candidates; visible copy is 12–50 words per slide; all C01–C18 occur in the specification; no internal-production terms occur in visible-copy blocks; source and scope wording passed | `SLIDE-CONTENT.md`, `OPERATION.md` | Recheck canonical fingerprints and close Phase 6 |
 | 2026-07-16 22:06 | 6 | Rechecked canonical artifact fingerprints | Template `53fa4c005acc8eb1c840a818dc6749eb5c6ceeec`, scope `e4c16c9b682406a7c5d6216f48990700e9c3d583`, knowledge `e410aafeb0af8c8989ede23665d64cfa829ecc00`, and script `d95441f64eabe59b5f46ce875c6da2c7026398d6` remain unchanged | `OPERATION.md` | Close Phase 6 |
 | 2026-07-16 22:06 | 6 | Closed Phase 6 | `SLIDE-CONTENT.md` accepted as canonical with fingerprint `ea7f283cde109cf27ca573efb60025d0cd776ba5`; Phase 7 prepared | `SLIDE-CONTENT.md`, `OPERATION.md` | Audit all 16 template slides and validate the output-to-source map |
+| 2026-07-16 22:09 | 7 | Started Phase 7 using Presentations template-following mode | Phase 7 is the only roadmap phase `In Progress`; full 16-slide inspection and inherited-object mapping will precede any PowerPoint authoring | `OPERATION.md` | Inspect the complete source deck in external scratch space |
 
 ## 13. QA and Unresolved Issues
 
