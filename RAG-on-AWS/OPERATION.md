@@ -22,10 +22,10 @@ must read, in order:
 |---|---|
 | Current phase | Phase 7 — Audit the complete template and map every output slide |
 | Phase status | `In Progress` |
-| Current task | Inspect all 16 template slides and capture source-slide/object evidence |
+| Current task | Apply the validated template map and template-fit copy revisions to `SLIDE-CONTENT.md` |
 | Last updated | 2026-07-16 22:09 +07:00 |
 | Blocking issue | None |
-| Exact next action | Run the Presentations template inspection script against immutable `Slide/Template.pptx` in external scratch space, then record the complete 16-slide inventory before selecting final source slides. |
+| Exact next action | Update every slide contract in `SLIDE-CONTENT.md` with its accepted source slide, exact inherited element IDs/actions, and documented template-fit copy revisions; then run Gate E QA. |
 
 ## 3. Confirmed Scope
 
@@ -179,11 +179,11 @@ and validation evidence are current.
 | Task | Evidence | Status |
 |---|---|---|
 | Re-read Presentations and template-following rules | Skill, content rules, template contract, `OPERATION.md`, and `SLIDE-CONTENT.md` reviewed | `Completed` |
-| Inspect all 16 source slides and inherited objects | External scratch audit, renders, layout JSON, manifest, and media inventory | `In Progress` |
-| Record complete template audit and reusable layout inventory | `template-audit.txt` plus canonical summary | `Pending` |
-| Map 11 output slides to validated source slides | `template-frame-map.json` with inherited edit targets and omission reasons | `Pending` |
-| Validate frame map and prepare starter deck | Plan validation and duplicated-source starter evidence | `Pending` |
-| Update `SLIDE-CONTENT.md` with accepted source/object plan | Final source slide and edit-target mapping per output slide | `Pending` |
+| Inspect all 16 source slides and inherited objects | Presentations inspection produced 16 full-size renders, 16 layout JSON files, manifest, NDJSON inventory, 20 extracted media assets, and font/theme evidence; montage and every slide reviewed at full size | `Completed` |
+| Record complete template audit and reusable layout inventory | `template-audit.txt` records all 16 source slides, selected/rejected layouts, theme/font/media evidence, preservation contract, risks, and reusable families | `Completed` |
+| Map 11 output slides to validated source slides | `template-frame-map.json` maps all outputs, 105 inherited edit targets, and all nine omitted source slides; `deviation-log.txt` and `source-notes.txt` record deviations/provenance | `Completed` |
+| Validate frame map and prepare starter deck | Validator passed with zero issues; starter deck contains 11 duplicated slides in mapped order, 8,536,855 bytes; previews/layouts and separately generated contact sheet inspected | `Completed` |
+| Update `SLIDE-CONTENT.md` with accepted source/object plan | Final source slide and edit-target mapping per output slide | `In Progress` |
 | Run Gate E validation and close Phase 7 | Template fidelity prerequisites, immutability, mapping completeness, and handoff evidence | `Pending` |
 
 ## 7. Decision Log
@@ -314,6 +314,11 @@ official source in `KNOWLEDGE.md`.
 | 2026-07-16 22:06 | 6 | Rechecked canonical artifact fingerprints | Template `53fa4c005acc8eb1c840a818dc6749eb5c6ceeec`, scope `e4c16c9b682406a7c5d6216f48990700e9c3d583`, knowledge `e410aafeb0af8c8989ede23665d64cfa829ecc00`, and script `d95441f64eabe59b5f46ce875c6da2c7026398d6` remain unchanged | `OPERATION.md` | Close Phase 6 |
 | 2026-07-16 22:06 | 6 | Closed Phase 6 | `SLIDE-CONTENT.md` accepted as canonical with fingerprint `ea7f283cde109cf27ca573efb60025d0cd776ba5`; Phase 7 prepared | `SLIDE-CONTENT.md`, `OPERATION.md` | Audit all 16 template slides and validate the output-to-source map |
 | 2026-07-16 22:09 | 7 | Started Phase 7 using Presentations template-following mode | Phase 7 is the only roadmap phase `In Progress`; full 16-slide inspection and inherited-object mapping will precede any PowerPoint authoring | `OPERATION.md` | Inspect the complete source deck in external scratch space |
+| 2026-07-16 22:10 | 7 | Inspected all 16 source slides with Presentations template-following tooling | Generated 16 renders, 16 layout JSON files, template manifest, object inventory, 20 extracted media assets, and theme/font evidence under external scratch; reviewed montage and each slide at full size | `OPERATION.md` | Record the complete reusable-layout audit |
+| 2026-07-16 22:14 | 7 | Completed the 16-slide template audit | `template-audit.txt` records every source slide, selected layout families, rejected provisional mappings, preservation rules, and Phase 8 risks; viable inherited structures exist for all 11 outputs | `OPERATION.md` | Build the exact output-to-source frame map |
+| 2026-07-16 22:17 | 7 | Created and validated the output-to-source frame map | Mapped all 11 outputs to sources 1, 3, 8, 9, 11, 12, and 15; recorded exact inherited edit targets, nine omitted-source reasons, deviations, and asset provenance; validator returned `pass` with zero issues | `OPERATION.md` | Prepare the duplicated-source starter deck |
+| 2026-07-16 22:18 | 7 | First starter-deck preparation attempt failed in optional contact-sheet generation | The script created `template-starter.pptx` and its inspect artifact, then raised `TypeError: Cannot read properties of undefined (reading 'trim')` in `runContactSheet`; source template and canonical artifacts were unchanged | `OPERATION.md` | Rerun without optional contact sheet and create montage separately |
+| 2026-07-16 22:19 | 7 | Prepared and inspected the duplicated-source starter deck | Rerun without the optional contact-sheet argument succeeded: 11 mapped slides, 8,536,855 bytes, per-slide renders/layouts, and manifest; a separate montage confirmed the expected source order and inherited design | `OPERATION.md` | Apply validated source/object mapping to `SLIDE-CONTENT.md` |
 
 ## 13. QA and Unresolved Issues
 

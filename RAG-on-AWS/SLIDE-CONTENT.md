@@ -15,9 +15,10 @@ listed under **Exact audience-visible copy** is eligible to appear on the slide.
 Production notes, timings, claim IDs, source IDs, and template instructions must
 not appear in the audience-facing deck.
 
-The source-slide numbers below are **provisional candidates only**. Phase 7 must
-inspect all 16 template slides, validate every candidate, identify inherited
-object IDs, and publish the final output-to-source map before PowerPoint editing.
+Phase 7 inspected all 16 template slides and validated the source slide and
+inherited edit targets for every output slide. The accepted map is recorded in
+§9 and in the external scratch `template-frame-map.json`. PowerPoint authoring
+must use the prepared duplicated-source starter deck and this accepted map.
 
 ## 2. Communication Job and Narrative Contract
 
@@ -80,16 +81,18 @@ outside the title.
 **AWS support:** No technical claim required. The subtitle previews C02 and C09
 without adding detail.
 
-**Provisional template need:** Candidate source slide **1** — title/divider
-composition. Phase 7 must confirm that this source can be reduced to a section
-divider without leaving presenter or event-title placeholders.
+**Validated template source:** Source slide **1** — cover-gradient composition,
+adapted as a merge-safe section divider.
 
-**Inherited-object intent, pending object IDs:**
+**Validated inherited-object plan:**
 
 - Keep background, brand marks, master objects, palette, and typography.
 - Rewrite title and subtitle placeholders in place.
 - Delete presenter/event metadata only if Phase 7 classifies those inherited
   objects as editable sample placeholders.
+
+Exact targets: rewrite `sh/ihkbixcj`, `sh/547294r6`; delete
+`sh/7qp4be9c`, `sh/432tk7up`, `sh/r6tsv2t0`.
 
 ---
 
@@ -121,15 +124,19 @@ closing sentence.
 
 **Approved claims and sources:** C01 → S1, S3.
 
-**Provisional template need:** Candidate source slide **3** — takeaway title,
-short claim block, and supporting image frame.
+**Validated template source:** Source slide **3** — claim, tag, callout, and
+inherited image composition.
 
-**Inherited-object intent, pending object IDs:**
+**Validated inherited-object plan:**
 
 - Keep brand chrome, title hierarchy, footer, and image crop conventions.
 - Rewrite title and body text in place.
 - Replace the sample image only through its inherited media frame.
 - Remove unused sample labels only after Phase 7 identifies them explicitly.
+
+Exact targets: rewrite `sh/0fq9gri9`, `sh/n2l4fq98`, `sh/m1c3mlsn`,
+`sh/v6l4jq94`, `sh/x8nml0ra`, `sh/ja54na9g`, `sh/03ix43e5`; delete
+`sh/i9w3u58v`, `sh/e10f2twf`, `sh/14ryd8fq`; replace `im/sretwbud`.
 
 ---
 
@@ -143,38 +150,42 @@ model generates a response; it does not retrain the model.
 
 **Exact audience-visible copy:**
 
-- Title: `RAG retrieves before it generates`
-- Step 1: `Ask a question`
-- Step 2: `Retrieve relevant context`
-- Step 3: `Add context to the prompt`
-- Step 4: `Generate a response`
+- Title: `RAG keeps three things separate`
+- Subtitle: `Retrieve relevant context before the model generates a response.`
+- Stage number: `1`
+- Stage 1 heading: `SOURCE DATA`
+- Stage 1 detail: `External knowledge outside the model`
+- Stage number: `2`
+- Stage 2 heading: `RETRIEVED CONTEXT`
+- Stage 2 detail: `Relevant passages added to the prompt`
+- Stage number: `3`
+- Stage 3 heading: `GENERATED RESPONSE`
+- Stage 3 detail: `The model's answer`
 - Footer statement: `Use external knowledge without retraining the model.`
-- Object label: `Source data`
-- Object label: `Retrieved context`
-- Object label: `Generated response`
 
-**Visual intent:** A compact left-to-right four-step conceptual flow. Use the
-three object labels to distinguish stored source material, selected context,
-and generated output. This is a mental-model strip, not one of the two detailed
-process diagrams.
+**Visual intent:** A compact left-to-right three-object conceptual map that
+distinguishes stored source material, selected context, and generated output.
+The inherited connectors show how information moves without presenting this as
+the detailed runtime process.
 
-**Density budget:** Four short step labels, three object labels, and one footer
-statement. No prose paragraph.
+**Density budget:** Three headings, three short details, one subtitle, and one
+footer statement. No prose paragraph.
 
 **Script mapping:** `SCRIPT.md` → `Slide 3 — Retrieve first, generate second`.
 
 **Approved claims and sources:** C02 → S1, S2; C03 → S1, S4; C04 → S1, S6, S7.
 
-**Provisional template need:** Candidate source slide **11** — inherited
-horizontal process structure.
+**Validated template source:** Source slide **9** — three connected inherited
+stages, supporting image frame, and conclusion bar.
 
-**Inherited-object intent, pending object IDs:**
+**Validated inherited-object plan:** Keep connectors, node geometry, number
+labels, background, footer structure, and brand objects. Rewrite title,
+subtitle, three headings, three bodies, slide number, and conclusion; replace
+the inherited image inside its existing frame.
 
-- Keep connectors, step spacing, title, footer, and brand elements where
-  compatible.
-- Rewrite inherited step labels.
-- Reuse inherited process nodes; do not overlay a new parallel process.
-- Delete surplus process nodes only if the validated map marks them for deletion.
+Exact targets: rewrite `sh/vi5s3a98`, `sh/1cfmhgne`, `sh/0b65obm9`,
+`sh/hcji5o7a`, `sh/cnu1kzyd`, `sh/wba1cjqp`, `sh/bml0buxs`,
+`sh/va103ep4`, `sh/98ji147e`, `sh/ml8j6p8n`; replace `im/lsrqloba`.
 
 ---
 
@@ -189,10 +200,13 @@ response in a retrieved agenda passage rather than relying on model memory.
 **Exact audience-visible copy:**
 
 - Title: `Ground answers in Cloud Mastery documents`
+- Stage number: `1`
 - Label: `Question`
 - Question: `How long is the RAG session?`
+- Stage number: `2`
 - Label: `Retrieved agenda passage`
 - Passage: `RAG with Bedrock — 20 minutes`
+- Stage number: `3`
 - Label: `Generated answer`
 - Answer: `The RAG session lasts 20 minutes.`
 - Closing line: `Answer from event content, not memory alone.`
@@ -209,16 +223,22 @@ answer, and one closing line.
 **Approved claims and sources:** C01 → S1, S3; C02 → S1, S2; C04 → S1, S6, S7.
 The `20 minutes` value comes from canonical `AGENDA.md`, not an AWS source.
 
-**Provisional template need:** Candidate source slide **14** — use-case or
-overlay composition with multiple inherited content regions.
+**Validated template source:** Source slide **9** — three connected states. The
+provisional source slide 14 was rejected because its full-bleed image and four
+overlays would let the supporting use case dominate the conceptual narrative.
 
-**Inherited-object intent, pending object IDs:**
+**Validated inherited-object plan:**
 
 - Keep background, title, brand chrome, and inherited content alignment.
 - Rewrite existing overlay text boxes as the three scenario states.
 - Replace any irrelevant sample background/media only through inherited media
   targets.
 - Avoid adding chat bubbles or simulated product UI.
+
+Exact targets: rewrite `sh/vi5s3a98`, `sh/1cfmhgne`, `sh/hcji5o7a`,
+`sh/cnu1kzyd`, `sh/wba1cjqp`, `sh/bml0buxs`, `sh/va103ep4`,
+`sh/98ji147e`, `sh/ml8j6p8n`; delete `sh/0b65obm9`; replace
+`im/lsrqloba`.
 
 ---
 
@@ -232,12 +252,16 @@ embeddings, and indexed in a vector store; changed content must be synchronized.
 **Exact audience-visible copy:**
 
 - Title: `Prepare knowledge before the first question`
+- Step number: `1`
 - Step 1: `Documents`
 - Step 1 detail: `Agenda and event materials`
+- Step number: `2`
 - Step 2: `Chunks`
 - Step 2 detail: `Smaller passages`
+- Step number: `3`
 - Step 3: `Embeddings`
 - Step 3 detail: `Numerical representations`
+- Step number: `4`
 - Step 4: `Vector store`
 - Step 4 detail: `Indexed for similarity search`
 - Footer statement: `Synchronize the data and index when source content changes.`
@@ -255,15 +279,19 @@ statement. No implementation options or configuration labels.
 **Approved claims and sources:** C05 → S4, S5; C06 → S4, S5; C07 → S4, S5, S8;
 C18 → S2, S6.
 
-**Provisional template need:** Candidate source slide **11** — four-step process
-layout.
+**Validated template source:** Source slide **11** — four-step process inside an
+inherited dark rounded container.
 
-**Inherited-object intent, pending object IDs:**
+**Validated inherited-object plan:**
 
 - Keep process connectors, node geometry, title, and brand elements.
 - Rewrite all four inherited nodes and their descriptions.
 - Use inherited icon/media slots only if they remain legible and accurate.
 - Do not add service logos; this slide explains generic concepts.
+
+Exact targets: rewrite `sh/6hgv65cn`, `sh/98rytw72`, `sh/o7ih0r6h`,
+`sh/zaxs3yhc`, `sh/tsnip0ny`, `sh/65wzelo7`, `sh/j2lgjq5w`,
+`sh/y1czalob`.
 
 ---
 
@@ -278,35 +306,38 @@ store to retrieve content by semantic similarity.
 **Exact audience-visible copy:**
 
 - Title: `Embeddings create a map of meaning`
+- Subtitle: `Embeddings map meaning. Vector stores find nearby content.`
 - Example A label: `Question`
 - Example A: `How long is the RAG session?`
 - Example B label: `Agenda passage`
 - Example B: `RAG with Bedrock — 20 minutes`
 - Main statement: `Similar meaning can be close — even when the words differ.`
-- Definition 1: `Embedding = numerical representation`
-- Definition 2: `Vector store = finds nearby meaning`
 
 **Visual intent:** A simple “map of meaning” analogy with the question and
 agenda passage positioned close together. Other faint points may suggest
 unrelated topics, but do not add axes, equations, scores, or fake precision.
 
-**Density budget:** Two short examples, one statement, and two compact
-definitions. No bullet list or paragraph.
+**Density budget:** Two short examples, one subtitle, and one statement. No
+bullet list, paragraph, equation, or numerical similarity score.
 
 **Script mapping:** `SCRIPT.md` → `Slide 6 — A map of meaning`.
 
 **Approved claims and sources:** C06 → S4, S5; C07 → S4, S5, S8; C08 → S4.
 
-**Provisional template need:** Candidate source slide **8** — contrast or
-two-region composition suitable for positioning two related examples.
+**Validated template source:** Source slide **8** — inherited image frame, two
+equal example cards, and conclusion bar.
 
-**Inherited-object intent, pending object IDs:**
+**Validated inherited-object plan:**
 
 - Keep title, background, typography, and two-region alignment.
 - Rewrite inherited comparison labels and central takeaway.
 - Reuse existing shapes only where they support the analogy.
 - Do not convert the analogy into a dashboard, scatter chart, or scientific
   measurement.
+
+Exact targets: rewrite `sh/8r2lo7mt`, `sh/g72x4zyd`, `sh/ri9g7uhw`,
+`sh/sjix0zy1`, `sh/je9g3ahk`, `sh/ehgvihwr`, `sh/zipwbmdc`,
+`sh/lgbepgvm`; replace `im/8ni54bu9`.
 
 ---
 
@@ -320,39 +351,51 @@ as context, and only then asks the foundation model to generate a response.
 
 **Exact audience-visible copy:**
 
-- Title: `At runtime, retrieve context before generating`
-- Step 1: `Ask a question`
-- Step 2: `Search by meaning`
-- Step 3: `Retrieve relevant chunks`
-- Step 4: `Add chunks as context`
-- Step 5: `Generate the answer`
+- Title: `Retrieve context before generating`
+- Subtitle: `Question → Retrieval → Context → Response`
+- Step number: `1`
+- Step 1 heading: `Ask a question`
+- Step 1 detail: `Search by meaning`
+- Step number: `2`
+- Step 2 heading: `Retrieve`
+- Step 2 detail: `Relevant chunks`
+- Step number: `3`
+- Step 3 heading: `Add context`
+- Step 3 detail: `Chunks + question`
+- Step number: `4`
+- Step 4 heading: `Generate`
+- Step 4 detail: `Foundation model answer`
 - Output label: `Answer + source attribution*`
 - Footnote: `*In supported retrieval-and-generation flows.`
 
-**Visual intent:** Second detailed process diagram. Use a left-to-right or
-top-to-bottom flow from question through retrieval and augmentation to the
-foundation-model response. The retrieved chunk must be visually distinct from
-the generated answer.
+**Visual intent:** Second detailed process diagram. Use the four inherited
+left-to-right nodes from question/search through retrieval and augmentation to
+the foundation-model response. The retrieved chunk remains conceptually
+distinct from the generated answer.
 
-**Density budget:** Five short step labels, one output label, and one footnote.
-No API names or implementation detail.
+**Density budget:** Four nodes with a heading/detail pair, one output label, and
+one footnote. No API names or implementation detail.
 
 **Script mapping:** `SCRIPT.md` → `Slide 7 — From question to grounded response`.
 
 **Approved claims and sources:** C08 → S4; C09 → S1, S4, S6; C11 → S7; C12 →
 S7, S11.
 
-**Provisional template need:** Candidate source slide **11** — process layout.
-Phase 7 must test whether the inherited structure supports five concise stages;
-if not, select another process source or split only after timing review.
+**Validated template source:** Source slide **11** — four-step inherited process.
+Question and semantic search are combined inside node 1 because the source
+layout has exactly four nodes.
 
-**Inherited-object intent, pending object IDs:**
+**Validated inherited-object plan:**
 
 - Keep inherited connector direction, title, step rhythm, and brand elements.
 - Rewrite process nodes in place.
 - Preserve enough separation between retrieved context and generated output.
 - Handle any additional output/source placeholder through an inherited target;
   do not overlay it on top of the process.
+
+Exact targets: rewrite `sh/6hgv65cn`, `sh/98rytw72`, `sh/o7ih0r6h`,
+`sh/zaxs3yhc`, `sh/tsnip0ny`, `sh/65wzelo7`, `sh/j2lgjq5w`,
+`sh/y1czalob`.
 
 ---
 
@@ -365,36 +408,45 @@ steps across preparation and runtime while leaving quality decisions important.
 
 **Exact audience-visible copy:**
 
-- Title: `Amazon Bedrock Knowledge Bases manages key RAG steps`
-- Lane 1 heading: `Prepare`
-- Lane 1 flow: `Connect source data → Chunk → Create embeddings → Store vectors`
-- Lane 2 heading: `Run`
-- Lane 2 flow: `Retrieve relevant chunks → Generate a response → Return source attribution*`
-- Main statement: `One managed workflow across preparation and runtime.`
-- Footnote: `*In supported retrieval-and-generation flows.`
+- Title: `Amazon Bedrock Knowledge Bases simplifies RAG`
+- Subtitle: `One managed workflow across preparation and runtime.`
+- Capability 1 label: `Prepare`
+- Capability 1 detail: `Connect, chunk, embed, and store`
+- Capability 2 label: `Retrieve`
+- Capability 2 detail: `Find relevant source chunks`
+- Capability 3 label: `Generate`
+- Capability 3 detail: `Create a response from retrieved context`
+- Capability 4 label: `Attribute`
+- Capability 4 detail: `Return sources in supported flows*`
+- Footer: `*Supported retrieval-and-generation flows. Quality decisions still matter.`
 
-**Visual intent:** A compact two-lane AWS mapping: preparation above and
-runtime below. Use the official product name as the containing capability, not
-as a magical single box that hides every quality decision. Avoid an AWS Console
+**Visual intent:** Four inherited capability rows map the generic RAG model to
+Amazon Bedrock Knowledge Bases. The inherited image frame contains a compact,
+accurate AWS capability visual rather than a process overlay or Console
 screenshot.
 
-**Density budget:** Two lane headings, seven short flow labels, one statement,
-and one footnote. No configuration, API, pricing, or Region content.
+**Density budget:** Four short label/detail pairs, one subtitle, and one footer.
+No configuration, API, pricing, or Region content.
 
 **Script mapping:** `SCRIPT.md` → `Slide 8 — Amazon Bedrock Knowledge Bases manages key RAG steps`.
 
 **Approved claims and sources:** C10 → S4, S6; C11 → S7; C12 → S7, S11.
 
-**Provisional template need:** Candidate source slide **12** — framework/list
-composition with an inherited supporting visual region. Phase 7 should prefer a
-source that can contain two lanes without adding a parallel custom layout.
+**Validated template source:** Source slide **12** — four inherited framework
+rows, image frame, and conclusion box. The provisional two-lane wording was
+reframed to fit the inherited structure directly.
 
-**Inherited-object intent, pending object IDs:**
+**Validated inherited-object plan:**
 
 - Keep background, title, framework hierarchy, footer, and brand marks.
 - Rewrite inherited framework text as preparation/runtime lanes.
 - Replace supporting media only through an inherited frame if needed.
 - Do not add unofficial AWS marks or generated product UI.
+
+Exact targets: rewrite `sh/4nupgvmx`, `sh/wvupgz6t`, `sh/xw3q94ne`,
+`sh/bulo7u58`, `sh/orapcf6h`, `sh/mps7a5or`, `sh/nq1o3a5w`,
+`sh/1oj61kn6`, `sh/hkbm5wzu`, `sh/fit436ho`, `sh/uh0na1g3`,
+`sh/7u94zmhs`; replace `im/czudcjap`.
 
 ---
 
@@ -410,35 +462,41 @@ simplified architecture.
 **Exact audience-visible copy:**
 
 - Title: `One vector-store role, two AWS choices`
-- Center label: `Vector store`
-- Center detail: `Store and retrieve embeddings`
-- Option 1: `Amazon OpenSearch Serverless`
-- Option 2: `Amazon Aurora PostgreSQL-Compatible Edition`
+- Subtitle: `Choose one vector-store option for this architecture.`
+- Card 1 heading: `VECTOR STORE`
+- Card 1 detail: `Store and retrieve embeddings`
+- Card 2: `AMAZON OPENSEARCH SERVERLESS`
+- Card 3: `AMAZON AURORA POSTGRESQL-COMPATIBLE EDITION`
 - Closing line: `Choose one option for this architecture — they are alternatives, not sequential steps.`
 
-**Visual intent:** One central vector-store role branching to two equal options.
-Do not use a feature-comparison table, winner badge, sequence arrow, or implied
-recommendation.
+**Visual intent:** Three equal inherited cards: one names the architectural
+role, and two name the AWS alternatives. Number circles are removed so the
+composition does not imply sequence, ranking, or a winner.
 
-**Density budget:** One role, two service names, and one clarification sentence.
-No selection criteria.
+**Density budget:** One short role/detail, two official service names, one
+subtitle, and one clarification sentence. No selection criteria.
 
 **Script mapping:** `SCRIPT.md` → `Slide 9 — One vector-store role, multiple AWS choices`.
 
 **Approved claims and sources:** C13 → S8, S9; C14 → S9, S10, S14; C15 → S8,
 S9, S10.
 
-**Provisional template need:** Candidate source slide **8** — equal two-option
-composition. Phase 7 must confirm the inherited reading order does not imply a
-before/after sequence.
+**Validated template source:** Source slide **15** — three equal inherited cards
+and conclusion bar. Provisional source slide 8 was rejected because its
+pink/green semantics imply a better/worse comparison.
 
-**Inherited-object intent, pending object IDs:**
+**Validated inherited-object plan:**
 
 - Keep equal visual weight, title, brand chrome, and typography.
 - Rewrite both option regions and the shared role label.
 - Use authentic AWS service identity only if official source assets are placed
   through inherited media targets.
 - Delete any comparison verdict or directional sample content.
+
+Exact targets: rewrite `sh/7md8jqpo`, `sh/t87ml0ji`, `sh/s7y5sv2x`,
+`sh/gjax03m9`; delete `sh/m9c3e1kn`, `sh/wrm9kvep`, `sh/vqdsrqx4`,
+`sh/4vm9ovel`, `sh/judsvqxg`, `sh/0z29cbyh`; rewrite and reposition
+`sh/hsvat0fa`, `sh/5wvax0f6`, `sh/l0bqlgf2` within their inherited cards.
 
 ---
 
@@ -453,14 +511,15 @@ answers.
 **Exact audience-visible copy:**
 
 - Title: `Better grounding is not a correctness guarantee`
-- Left heading: `RAG can help`
-- Left item 1: `Use private or updated data`
-- Left item 2: `Retrieve relevant context`
-- Left item 3: `Improve traceability with sources*`
-- Right heading: `RAG still depends on`
-- Right item 1: `Source quality and freshness`
-- Right item 2: `Chunking and retrieval quality`
-- Right item 3: `Generated-response quality`
+- Subtitle: `Grounded answers still depend on the full quality chain.`
+- Left heading: `RAG still depends on`
+- Left item 1: `Source quality and freshness`
+- Left item 2: `Chunking and retrieval quality`
+- Left item 3: `Generated-response quality`
+- Right heading: `RAG can help`
+- Right item 1: `Use private or updated data`
+- Right item 2: `Retrieve relevant context`
+- Right item 3: `Improve traceability with sources*`
 - Closing line: `RAG can reduce hallucination risk. It does not guarantee correctness.`
 - Footnote: `*In supported retrieval-and-generation flows.`
 
@@ -476,15 +535,19 @@ and one footnote. Keep explanations in the Vietnamese script.
 **Approved claims and sources:** C12 → S7, S11; C16 → S11, S13, S15; C17 →
 S13; C18 → S2, S6.
 
-**Provisional template need:** Candidate source slide **6** — balanced
-comparison layout.
+**Validated template source:** Source slide **8** — inherited image frame, two
+balanced contrast cards, and conclusion bar.
 
-**Inherited-object intent, pending object IDs:**
+**Validated inherited-object plan:**
 
 - Keep title, two-column balance, typography, brand elements, and footer.
 - Rewrite both inherited comparison regions and the closing statement.
 - Replace supporting images only if an inherited frame remains necessary.
 - Remove sample verdicts or metrics; no fabricated numbers.
+
+Exact targets: rewrite `sh/8r2lo7mt`, `sh/g72x4zyd`, `sh/ri9g7uhw`,
+`sh/sjix0zy1`, `sh/je9g3ahk`, `sh/ehgvihwr`, `sh/zipwbmdc`,
+`sh/lgbepgvm`; replace `im/8ni54bu9`.
 
 ---
 
@@ -499,6 +562,7 @@ Amazon Bedrock Knowledge Bases simplifies key steps, but quality still matters.
 **Exact audience-visible copy:**
 
 - Title: `Three things to remember`
+- Subtitle: `The RAG mental model in three ideas.`
 - Takeaway 1 heading: `No retraining required`
 - Takeaway 1 detail: `Use external knowledge as context.`
 - Takeaway 2 heading: `Retrieve first, generate second`
@@ -519,15 +583,18 @@ line.
 **Approved claims and sources:** C02 → S1, S2; C03 → S1, S4; C10 → S4, S6;
 C16 → S11, S13, S15.
 
-**Provisional template need:** Candidate source slide **15** — three-key-
-takeaways composition.
+**Validated template source:** Source slide **15** — three numbered inherited
+takeaway cards and conclusion bar.
 
-**Inherited-object intent, pending object IDs:**
+**Validated inherited-object plan:**
 
 - Keep the three-card hierarchy, title, background, brand marks, and footer.
 - Rewrite each inherited takeaway heading/detail in place.
 - Rewrite or delete the inherited closing element only if explicitly mapped.
 - Do not add independent ending or Q&A slides.
+
+Exact targets: rewrite `sh/7md8jqpo`, `sh/t87ml0ji`, `sh/s7y5sv2x`,
+`sh/hsvat0fa`, `sh/5wvax0f6`, `sh/l0bqlgf2`, `sh/gjax03m9`.
 
 ## 5. Slide-to-Script and Claim Coverage Matrix
 
