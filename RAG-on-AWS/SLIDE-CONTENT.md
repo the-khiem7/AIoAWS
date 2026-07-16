@@ -641,25 +641,38 @@ specification are:
 S12 is retained in the canonical knowledge registry but is not required to
 support exact audience-visible copy in this 11-slide specification.
 
-## 7. Phase 7 Template-Mapping Contract
+## 7. Phase 7 Validated Template Map
 
-Before PowerPoint authoring, Phase 7 must:
+The Presentations template-following audit inspected all 16 source slides and
+accepted this output-to-source mapping:
 
-1. Inspect all 16 slides in `Slide/Template.pptx` using the Presentations
-   template-following workflow.
-2. Validate or replace every provisional candidate source slide above.
-3. Record one final source slide for every output slide; source slides may be
-   reused.
-4. Identify inherited object IDs and classify each as `keep`, `rewrite`,
-   `replace`, or `delete`.
-5. Ensure every audience-visible string has an inherited target or document a
-   bounded, validated insertion only when the template contract permits it.
-6. Preserve font family, size, weight, spacing, alignment, master, background,
-   logo, footer, and brand chrome.
-7. Confirm that Slides 5 and 7 are the only full process diagrams.
-8. Confirm that Slide 9 reads as alternatives, not a sequence.
-9. Confirm no slide requires text shrinking below the inherited hierarchy.
-10. Publish the validated output-to-source map before creating a starter deck.
+| Output slide | Source slide | Inherited pattern | Edit targets |
+|---:|---:|---|---:|
+| 1 | 1 | Cover gradient / section divider | 5 |
+| 2 | 3 | Problem claim, tags, callout, image | 11 |
+| 3 | 9 | Three connected conceptual states | 11 |
+| 4 | 9 | Three connected use-case states | 11 |
+| 5 | 11 | Four-step preparation process | 8 |
+| 6 | 8 | Image plus two semantic examples | 9 |
+| 7 | 11 | Four-step runtime process | 8 |
+| 8 | 12 | Four-row AWS capability framework | 13 |
+| 9 | 15 | Three equal vector-store role/option cards | 13 |
+| 10 | 8 | Benefit/dependency comparison | 9 |
+| 11 | 15 | Three numbered takeaways | 7 |
+
+Validation evidence:
+
+- All 16 source slides were reviewed at full size.
+- The frame-map validator passed with zero issues.
+- The map contains 11 output slides and 105 inherited edit targets.
+- The duplicated-source starter deck contains 11 slides in the expected order.
+- Source slides 2, 4, 5, 6, 7, 10, 13, 14, and 16 are intentionally omitted.
+- Slides 5 and 7 remain the only full process diagrams.
+- Slide 9 removes inherited number circles so the service choices do not read
+  as a sequence or ranking.
+- No new card, panel, table, chart, or parallel theme layout is permitted.
+- Font family, size, weight, spacing, master, background, footer, logo, and
+  brand chrome remain inherited from the mapped source slide.
 
 ## 8. Phase 6 Acceptance Criteria
 
@@ -681,6 +694,5 @@ Phase 6 is complete when:
 - Slide text is English; Vietnamese explanation remains in `SCRIPT.md`.
 - No audience-facing timing, production notes, Kahoot, demo, code, pricing,
   presenter biography, general Q&A, or generic thank-you content appears.
-- Every slide has a provisional template-layout candidate, with final mapping
-  explicitly deferred to Phase 7.
+- Every slide now has a validated source slide and exact inherited-object plan.
 - `Slide/Template.pptx` remains unchanged and no output PPTX has been authored.
