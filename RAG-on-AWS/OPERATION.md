@@ -20,12 +20,12 @@ must read, in order:
 
 | Field | Value |
 |---|---|
-| Current phase | Phase 6 — Produce and review the English slide-content specification |
+| Current phase | Phase 7 — Audit the complete template and map every output slide |
 | Phase status | `Pending` |
-| Current task | Phase 5 completed; Phase 6 is ready to start |
-| Last updated | 2026-07-16 21:58 +07:00 |
+| Current task | Phase 6 completed; Phase 7 is ready to start |
+| Last updated | 2026-07-16 22:06 +07:00 |
 | Blocking issue | None |
-| Exact next action | Start Phase 6 and create `RAG-on-AWS/SLIDE-CONTENT.md` with exact English audience-visible copy for the 11-slide hypothesis, narrative role, visual intent, script mapping, claim/source references, density constraints, and provisional template-layout needs; do not edit the PPTX yet. |
+| Exact next action | Start Phase 7 with the Presentations template-following workflow: inspect all 16 slides in `Slide/Template.pptx`, validate or replace every provisional candidate in `SLIDE-CONTENT.md`, identify inherited edit targets, and create the validated output-to-source frame map before authoring any slide. |
 
 ## 3. Confirmed Scope
 
@@ -102,7 +102,7 @@ and validation evidence are current.
 | 3 | Research and verify RAG knowledge with AWS sources | `KNOWLEDGE.md`; source-to-claim mapping | `Completed` |
 | 4 | Design the beginner-focused 20-minute narrative | Narrative and timing plan recorded in domain artifacts | `Completed` |
 | 5 | Write and review the Vietnamese script in both formats | `SCRIPT.md`; timing and transition review | `Completed` |
-| 6 | Produce and review the English slide-content specification | `SLIDE-CONTENT.md`; copy and source coverage review | `Pending` |
+| 6 | Produce and review the English slide-content specification | `SLIDE-CONTENT.md`; copy and source coverage review | `Completed` |
 | 7 | Audit the complete template and map every output slide | Template audit; validated output-to-source slide map | `Pending` |
 | 8 | Duplicate template slides and author the RAG PowerPoint | `Slide/RAG-on-AWS.pptx`; original template unchanged | `Pending` |
 | 9 | Render, inspect, and validate every slide | Per-slide visual QA evidence | `Pending` |
@@ -163,6 +163,17 @@ and validation evidence are current.
 | Validate naturalness, newcomer clarity, claim safety, and timing | Gate C passed: all required sections present, claim wording reviewed, approximately 1,948 words, 17:40 target, and 2:20 safety margin retained | `Completed` |
 | Close Phase 5 and prepare Phase 6 handoff | Updated roadmap, artifacts, QA, and next action | `Completed` |
 
+## 6E. Phase 6 Task-Level Progress
+
+| Task | Evidence | Status |
+|---|---|---|
+| Re-read Presentations content and template-following rules | Presentations skill, content-quality rules, template-following contract, and canonical Phase 6 inputs reviewed | `Completed` |
+| Draft exact English audience-visible copy for slides 1–11 | `SLIDE-CONTENT.md` contains exact titles, labels, statements, and footnotes for all 11 slides | `Completed` |
+| Map each slide to script sections and approved AWS claims/sources | Per-slide mapping plus consolidated coverage matrix records C01–C18 subsets and S1–S15 references | `Completed` |
+| Record visual intent, density constraints, and provisional template-layout needs | Every slide records visual intent, density budget, candidate source slide, and inherited-object intent; final mapping remains deferred to Phase 7 | `Completed` |
+| Run Gate D copy, density, alignment, source, and scope validation | Passed: 11/11 slides contain all required contracts; visible-copy density is 12–50 words; C01–C18 and S1–S15 references validate; no internal terms appear in visible-copy blocks; canonical fingerprints are unchanged | `Completed` |
+| Close Phase 6 and prepare Phase 7 handoff | Roadmap, artifact registry, QA, operation log, and exact next action updated | `Completed` |
+
 ## 7. Decision Log
 
 | Date | Decision | Rationale | Affected artifacts |
@@ -178,6 +189,7 @@ and validation evidence are current.
 | 2026-07-16 | Include both full talk track and concise speaker notes | User requires both rehearsal and live-reference formats | `SCRIPT.md` |
 | 2026-07-16 | Preserve `Slide/Template.pptx` as immutable | User requirement and template-following contract | Template workflow and QA |
 | 2026-07-16 | Do not create a distilled prompt | `AGENTS.md` and this file are the canonical handoff system | Project workflow |
+| 2026-07-16 | Keep the accepted 11-slide specification for Gate D | The 17:40 narrative fits the slot, each slide has one teaching job, and visible-copy density remains within 12–50 words | `SLIDE-CONTENT.md`, `SCRIPT.md` |
 | 2026-07-16 | Use AI Agents on AWS and `awsknowledge` from Phase 2 onward | Scope authoring contains AWS terminology and boundaries whose accuracy must be verified before deeper content research | `AGENTS.md`, `SCOPE.md`, `KNOWLEDGE.md`, this file |
 
 ## 8. Assumptions and Open Questions
@@ -233,7 +245,7 @@ official source in `KNOWLEDGE.md`.
 | `RAG-on-AWS/SCOPE.md` | Locked scope and learning outcomes | Completed / canonical | Gate A passed 2026-07-16; Git blob fingerprint `e4c16c9b682406a7c5d6216f48990700e9c3d583` |
 | `RAG-on-AWS/KNOWLEDGE.md` | Verified AWS knowledge and citations | Completed / canonical | Gate B passed 2026-07-16; 18 approved claims, 15 source records, fingerprint `e410aafeb0af8c8989ede23665d64cfa829ecc00` |
 | `RAG-on-AWS/SCRIPT.md` | Narrative blueprint, full Vietnamese talk tracks, and speaker notes | Completed / canonical | Gate C passed 2026-07-16; 11 full tracks, 11 note sets, all metadata, approximately 1,948 words; fingerprint `d95441f64eabe59b5f46ce875c6da2c7026398d6` |
-| `RAG-on-AWS/SLIDE-CONTENT.md` | English slide authoring contract | Not created | `Pending` |
+| `RAG-on-AWS/SLIDE-CONTENT.md` | English slide authoring contract | Completed / canonical | Gate D passed 2026-07-16; 11 exact-copy blocks, 11 visual/density/script/template contracts, complete approved claim coverage; fingerprint `ea7f283cde109cf27ca573efb60025d0cd776ba5` |
 | `Slide/RAG-on-AWS.pptx` | Merge-ready RAG slide module | Not created | `Pending` |
 
 ## 11. Template Audit Summary
@@ -243,7 +255,7 @@ official source in `KNOWLEDGE.md`.
   `53fa4c005acc8eb1c840a818dc6749eb5c6ceeec`.
 - Full template inspection and slide mapping belong to Phase 7 and have not yet
   been accepted as execution evidence.
-- No output slide may be authored until Gates A–D are complete and the Phase 7
+- Gates A–D are complete. No output slide may be authored until the Phase 7
   mapping has been validated.
 - Final QA must recheck the template fingerprint and investigate any mismatch.
 
@@ -284,6 +296,11 @@ official source in `KNOWLEDGE.md`.
 | 2026-07-16 | 5 | Measured talk-track length during Gate C | 11 sections contain approximately 1,948 words; straight reading is about 16:14 at 120 WPM, leaving planned emphasis/transition time within the 17:40 target and preserving the 2:20 safety margin | `SCRIPT.md`, `OPERATION.md` | Complete Gate C review |
 | 2026-07-16 21:58 | 5 | Ran Gate C script validation | Verified 11/11 full talk tracks, speaker notes, transition-in, transition-out, terminology, objectives, durations, and claim sets; reviewed newcomer clarity and prohibited wording | `SCRIPT.md`, `OPERATION.md` | Close Phase 5 |
 | 2026-07-16 21:58 | 5 | Closed Phase 5 | Script accepted as canonical with fingerprint `d95441f64eabe59b5f46ce875c6da2c7026398d6`; Phase 6 prepared | `SCRIPT.md`, `OPERATION.md` | Create exact English slide-content specification |
+| 2026-07-16 22:03 | 6 | Started Phase 6 using Presentations content and template-following rules | Phase 6 is the only roadmap phase `In Progress`; canonical scope, knowledge, and script are the content inputs; final template mapping and PPTX editing remain deferred | `OPERATION.md` | Draft exact English copy and slide authoring contract |
+| 2026-07-16 22:03 | 6 | Created `RAG-on-AWS/SLIDE-CONTENT.md` | Added exact English copy for 11 slides, narrative roles, primary claims, visual intents, density budgets, script links, approved claim/source mappings, provisional source-layout candidates, inherited-object intent, and Phase 7 mapping contract | `SLIDE-CONTENT.md`, `OPERATION.md` | Run Gate D validation |
+| 2026-07-16 22:06 | 6 | Ran Gate D slide-specification validation | Verified 11 slide headings, exact-copy blocks, visual intents, density budgets, script mappings, and provisional template candidates; visible copy is 12–50 words per slide; all C01–C18 occur in the specification; no internal-production terms occur in visible-copy blocks; source and scope wording passed | `SLIDE-CONTENT.md`, `OPERATION.md` | Recheck canonical fingerprints and close Phase 6 |
+| 2026-07-16 22:06 | 6 | Rechecked canonical artifact fingerprints | Template `53fa4c005acc8eb1c840a818dc6749eb5c6ceeec`, scope `e4c16c9b682406a7c5d6216f48990700e9c3d583`, knowledge `e410aafeb0af8c8989ede23665d64cfa829ecc00`, and script `d95441f64eabe59b5f46ce875c6da2c7026398d6` remain unchanged | `OPERATION.md` | Close Phase 6 |
+| 2026-07-16 22:06 | 6 | Closed Phase 6 | `SLIDE-CONTENT.md` accepted as canonical with fingerprint `ea7f283cde109cf27ca573efb60025d0cd776ba5`; Phase 7 prepared | `SLIDE-CONTENT.md`, `OPERATION.md` | Audit all 16 template slides and validate the output-to-source map |
 
 ## 13. QA and Unresolved Issues
 
@@ -325,11 +342,21 @@ official source in `KNOWLEDGE.md`.
   separate 2:20 safety margin.
 - Script wording preserves no-retraining, alternative-vector-store,
   supported-citation, synchronization, and reduce-not-eliminate boundaries.
+- Gate D passed: all 11 slides contain exact English copy, visual intent,
+  density budget, script mapping, approved claim/source references, provisional
+  source-layout candidates, and inherited-object intent.
+- Audience-visible copy is 12–50 words per slide and contains no timing,
+  speaker, claim-ID, source-ID, template, Kahoot, demo, pricing, Q&A, or
+  presenter-production language.
+- The specification covers all approved claims C01–C18 without introducing a
+  new AWS capability, metric, recommendation, or correctness guarantee.
+- `Slide/Template.pptx`, `SCOPE.md`, `KNOWLEDGE.md`, and `SCRIPT.md`
+  fingerprints remain unchanged after Phase 6.
 
 ### Pending checks
 
-- Phase 6 exact English copy, density, script alignment, visual intent, and
-  claim/source coverage.
+- Phase 7 full 16-slide template audit, inherited-object inventory, and
+  validated output-to-source frame map.
 
 ### Unresolved issues
 
@@ -337,24 +364,25 @@ official source in `KNOWLEDGE.md`.
 
 ## 14. Handoff Instructions
 
-Phases 1–5 are complete. To continue with Phase 6:
+Phases 1–6 and Gates A–D are complete. To continue with Phase 7:
 
 1. Read `AGENTS.md` and this file.
-2. Read canonical `SCOPE.md`, `KNOWLEDGE.md`, and `SCRIPT.md`.
-3. Set Roadmap Phase 6 and the Current Execution State to `In Progress` before
-   writing slide content.
-4. Create `SLIDE-CONTENT.md` with exact English audience-facing copy for each
-   slide, keeping the Vietnamese explanation in `SCRIPT.md`.
-5. Record narrative role, primary claim, visual intent, script link, claim IDs,
-   source references, and density constraints per slide.
-6. Treat 11 slides as a hypothesis that may be adjusted for legibility, but
-   preserve narrative order and timing.
-7. Record provisional template-layout needs without editing the PPTX or claiming
-   final source-slide mappings before the complete template audit.
-8. Validate exact copy, newcomer readability, script alignment, visual economy,
-   source coverage, and scope compliance.
-9. Update the artifact registry, roadmap, operation log, QA state, and exact
-   next action before starting Phase 7.
+2. Read canonical `SLIDE-CONTENT.md` and the matching sections in `SCRIPT.md`.
+3. Set Roadmap Phase 7 and Current Execution State to `In Progress` before
+   running template inspection.
+4. Use the Presentations template-following workflow to inspect all 16 source
+   slides and generate the required audit evidence in external scratch space.
+5. Validate or replace each provisional candidate source slide in
+   `SLIDE-CONTENT.md` without changing narrative order or exact copy unless
+   template fit requires a documented content revision.
+6. Identify exact inherited object IDs and classify them as `keep`, `rewrite`,
+   `replace`, or `delete`.
+7. Create and validate the full output-to-source frame map for all 11 output
+   slides, including omitted-source-slide reasons.
+8. Update `SLIDE-CONTENT.md` with the accepted source slide and inherited-object
+   plan for every output slide.
+9. Update the artifact registry, template audit summary, roadmap, operation log,
+   QA state, and exact next action before starting PowerPoint authoring.
 
 Do not begin AWS research, script writing, slide-content authoring, or
 PowerPoint editing until its preceding gate is complete.
