@@ -1,0 +1,18 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "printf '%s\\n' 'After every completed small step or task, use your judgment to update the corresponding domain document and RAG-on-AWS/OPERATION.md before continuing.'",
+            "commandWindows": "cmd /d /s /c \"echo After every completed small step or task, use your judgment to update the corresponding domain document and RAG-on-AWS/OPERATION.md before continuing.\"",
+            "timeout": 5,
+            "statusMessage": "Loading documentation reminder"
+          }
+        ]
+      }
+    ]
+  }
+}
