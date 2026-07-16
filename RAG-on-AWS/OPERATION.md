@@ -20,12 +20,12 @@ must read, in order:
 
 | Field | Value |
 |---|---|
-| Current phase | Phase 4 — Design the beginner-focused 20-minute narrative |
+| Current phase | Phase 5 — Write and review the Vietnamese script in both formats |
 | Phase status | `Pending` |
-| Current task | Phase 3 completed; Phase 4 is ready to start |
-| Last updated | 2026-07-16 21:37 +07:00 |
+| Current task | Phase 4 completed; Phase 5 is ready to start |
+| Last updated | 2026-07-16 21:44 +07:00 |
 | Blocking issue | None |
-| Exact next action | Start Phase 4 and design the 18–19 minute teaching narrative from the locked `SCOPE.md` and approved claims in `KNOWLEDGE.md`; define the cumulative story, section beats, timing budget, transitions, and claim IDs used by each beat without writing final slide copy yet. |
+| Exact next action | Start Phase 5 and expand each of the 11 beats in `RAG-on-AWS/SCRIPT.md` into a natural Vietnamese full talk track plus concise Vietnamese speaker notes, with objective, duration, transitions, and terminology guidance; preserve the 17:40 target and approved claim boundaries. |
 
 ## 3. Confirmed Scope
 
@@ -100,7 +100,7 @@ and validation evidence are current.
 | 1 | Initialize operation truth and confirm workspace inputs | `OPERATION.md`; input existence and baseline fingerprints | `Completed` |
 | 2 | Extract and lock the RAG scope from the agenda | `SCOPE.md`; scope-to-agenda validation | `Completed` |
 | 3 | Research and verify RAG knowledge with AWS sources | `KNOWLEDGE.md`; source-to-claim mapping | `Completed` |
-| 4 | Design the beginner-focused 20-minute narrative | Narrative and timing plan recorded in domain artifacts | `Pending` |
+| 4 | Design the beginner-focused 20-minute narrative | Narrative and timing plan recorded in domain artifacts | `Completed` |
 | 5 | Write and review the Vietnamese script in both formats | `SCRIPT.md`; timing and transition review | `Pending` |
 | 6 | Produce and review the English slide-content specification | `SLIDE-CONTENT.md`; copy and source coverage review | `Pending` |
 | 7 | Audit the complete template and map every output slide | Template audit; validated output-to-source slide map | `Pending` |
@@ -140,6 +140,17 @@ and validation evidence are current.
 | Draft `RAG-on-AWS/KNOWLEDGE.md` | Knowledge artifact created with 18 approved claims, 15 source records, coverage matrix, wording constraints, and resolved deferrals | `Completed` |
 | Validate all scope deferrals and claim coverage | Gate B passed: 18 claims, 15 source records/URLs, complete coverage matrix, safe inference labels, and all deferrals resolved | `Completed` |
 | Close Phase 3 and prepare Phase 4 handoff | Updated roadmap, artifacts, QA, and next action | `Completed` |
+
+## 6C. Phase 4 Task-Level Progress
+
+| Task | Evidence | Status |
+|---|---|---|
+| Re-read Presentations narrative rules and canonical artifacts | Presentations skill, content rules, `SCOPE.md`, and `KNOWLEDGE.md` reviewed; fingerprints unchanged | `Completed` |
+| Define communication job, arc, and opening/closing resolution | 11-beat cumulative learning arc recorded in `SCRIPT.md` | `Completed` |
+| Allocate provisional beats and 18–19 minute timing budget | 17:40 planned delivery plus 2:20 safety margin | `Completed` |
+| Map beats to approved claim IDs and use-case roles | All C01–C18 mapped; use-case role documented per beat | `Completed` |
+| Validate learning progression, density, transitions, and scope | Phase 4 QA passed: 11 beats/questions, 17:40 total, 2:20 margin, C01–C18 coverage, opening/closing resolution, and scope compliance verified | `Completed` |
+| Close Phase 4 and prepare Phase 5 handoff | Updated roadmap, artifacts, QA, and next action | `Completed` |
 
 ## 7. Decision Log
 
@@ -210,7 +221,7 @@ official source in `KNOWLEDGE.md`.
 | `RAG-on-AWS/OPERATION.md` | Source of operation truth | Created / canonical | Zero-context handoff structure validated 2026-07-16 |
 | `RAG-on-AWS/SCOPE.md` | Locked scope and learning outcomes | Completed / canonical | Gate A passed 2026-07-16; Git blob fingerprint `e4c16c9b682406a7c5d6216f48990700e9c3d583` |
 | `RAG-on-AWS/KNOWLEDGE.md` | Verified AWS knowledge and citations | Completed / canonical | Gate B passed 2026-07-16; 18 approved claims, 15 source records, fingerprint `e410aafeb0af8c8989ede23665d64cfa829ecc00` |
-| `RAG-on-AWS/SCRIPT.md` | Full Vietnamese talk track and speaker notes | Not created | `Pending` |
+| `RAG-on-AWS/SCRIPT.md` | Narrative blueprint; later full Vietnamese talk track and speaker notes | Phase 4 completed / Phase 5 input | Narrative QA passed 2026-07-16; 11 beats, 17:40 target, all claims mapped; fingerprint `d9eaa19a2f3cc159e9da5a2d33cd47b7e5409ad7` |
 | `RAG-on-AWS/SLIDE-CONTENT.md` | English slide authoring contract | Not created | `Pending` |
 | `Slide/RAG-on-AWS.pptx` | Merge-ready RAG slide module | Not created | `Pending` |
 
@@ -253,6 +264,10 @@ official source in `KNOWLEDGE.md`.
 | 2026-07-16 21:36 | 3 | Corrected Aurora claim traceability during Gate B | Claim C14 now maps to vector-store support, Aurora integration, and Aurora pgvector sources rather than the OpenSearch setup source | `KNOWLEDGE.md`, `OPERATION.md` | Complete Gate B validation |
 | 2026-07-16 21:37 | 3 | Ran Gate B knowledge validation | Verified 18 sequential claim IDs, 15 source records and URLs, source-to-claim matrix, all scope concepts, safe inference labels, wording constraints, and eight resolved Phase 3 deferrals | `KNOWLEDGE.md`, `OPERATION.md` | Close Phase 3 |
 | 2026-07-16 21:37 | 3 | Closed Phase 3 | `KNOWLEDGE.md` accepted as canonical with fingerprint `e410aafeb0af8c8989ede23665d64cfa829ecc00`; template and scope fingerprints remain unchanged | `KNOWLEDGE.md`, `OPERATION.md` | Design the 20-minute narrative in Phase 4 |
+| 2026-07-16 21:42 | 4 | Started Phase 4 using Presentations narrative rules | Canonical scope/knowledge/template fingerprints match; final slide copy and PowerPoint authoring remain deferred | `SCRIPT.md`, `OPERATION.md` | Create narrative blueprint and timing plan |
+| 2026-07-16 21:44 | 4 | Created Phase 4 narrative blueprint in `SCRIPT.md` | Added 11 cumulative beats, 17:40 timing plan, 2:20 safety margin, transitions, checkpoints, all 18 claim mappings, use-case discipline, density guidance, and Phase 5 contract | `SCRIPT.md`, `OPERATION.md` | Run Phase 4 narrative QA |
+| 2026-07-16 21:44 | 4 | Ran Phase 4 narrative QA | Verified 11 beats, 11 audience questions, 18 claim-coverage entries, 17:40 total, 2:20 buffer, opening/closing resolution, use-case discipline, scope compliance, and no premature slide/PPT authoring | `SCRIPT.md`, `OPERATION.md` | Close Phase 4 |
+| 2026-07-16 21:44 | 4 | Closed Phase 4 | Narrative blueprint accepted with fingerprint `d9eaa19a2f3cc159e9da5a2d33cd47b7e5409ad7`; Phase 5 prepared | `SCRIPT.md`, `OPERATION.md` | Write full Vietnamese talk tracks and speaker notes |
 
 ## 13. QA and Unresolved Issues
 
@@ -282,10 +297,16 @@ official source in `KNOWLEDGE.md`.
   choices in the simplified architecture.
 - `Slide/Template.pptx` and canonical `SCOPE.md` fingerprints remain unchanged
   after Phase 3.
+- Phase 4 narrative QA passed with 11 beats, 11 audience questions, all 18
+  approved claim IDs mapped, and a 17:40 planned runtime plus 2:20 safety margin.
+- Generic RAG concepts precede AWS mapping; the use case remains supporting;
+  OpenSearch/Aurora remain alternatives; final slide copy and PowerPoint work
+  remain deferred.
 
 ### Pending checks
 
-- Phase 4 narrative completeness, learning progression, timing, and claim usage.
+- Phase 5 full-talk-track naturalness, speaker-note completeness, terminology,
+  transition quality, and rehearsal timing.
 
 ### Unresolved issues
 
@@ -293,23 +314,24 @@ official source in `KNOWLEDGE.md`.
 
 ## 14. Handoff Instructions
 
-Phases 1–3 are complete. To continue with Phase 4:
+Phases 1–4 are complete. To continue with Phase 5:
 
 1. Read `AGENTS.md` and this file.
-2. Read canonical `RAG-on-AWS/SCOPE.md` and `RAG-on-AWS/KNOWLEDGE.md`.
-3. Set Roadmap Phase 4 and the Current Execution State to `In Progress` before
-   narrative design.
-4. Design an 18–19 minute cumulative learning sequence with a 1–2 minute safety
-   margin, beginning with the required section divider.
-5. Map every narrative beat to approved claim IDs from `KNOWLEDGE.md`.
-6. Keep the Cloud Mastery Knowledge Assistant as a supporting thread rather
-   than the presentation's main subject.
-7. Record the narrative and timing plan in the appropriate domain artifact
-   without writing final English slide copy or PowerPoint slides prematurely.
-8. Validate learning progression, scope compliance, timing, transitions, and
-   claim coverage.
+2. Read canonical `SCOPE.md`, `KNOWLEDGE.md`, and the Phase 4 blueprint in
+   `SCRIPT.md`.
+3. Set Roadmap Phase 5 and the Current Execution State to `In Progress` before
+   script authoring.
+4. For each of the 11 beats, write both a natural Vietnamese full talk track and
+   concise Vietnamese speaker notes.
+5. Add objective, transition in, transition out, duration, and terminology or
+   pronunciation notes where useful.
+6. Use only approved claim IDs and required qualification rules.
+7. Rehearsal-check the script against the 17:40 target; retain the 2:20 margin
+   rather than expanding scope.
+8. Validate that the script is understandable to a newcomer and aligned with
+   the narrative sequence.
 9. Update the artifact registry, roadmap, operation log, QA state, and exact
-   next action before starting Phase 5.
+   next action before starting Phase 6.
 
 Do not begin AWS research, script writing, slide-content authoring, or
 PowerPoint editing until its preceding gate is complete.
